@@ -1,4 +1,5 @@
 11         consultation         n.協商會
+4         ambiguous         adj.含糊的
 4         cubic         adj.立方的
 4         fisherman         n.漁民；漁夫
 2         abolition         n.廢除
@@ -10,7 +11,6 @@
 2         akin         adj.類似的
 2         allocate         v.撥給
 2         altogether         adv.完全；總而言之
-2         ambiguous         adj.含糊的
 2         ancestor         n.祖先
 2         aquarium         n.水族館
 2         assistant         n.助理
@@ -19,8 +19,10 @@
 2         bitterness         n.苦；悲傷
 2         bravery         n.勇敢；勇氣
 2         brief         adj./n./v.簡短的
+2         Christianity         n.基督教
 2         definite         adj.明確的；肯定的
 2         fortunate         adj.幸運的
+2         gin         n.杜松子酒
 2         grin         v./n.露齒而笑
 2         yacht         n.帆船；遊艇
 1         abolish         v.廢除
@@ -28,6 +30,7 @@
 1         acceleration         n.加速
 1         accessible         adj.易接近的
 1         accidental         adj.偶然的；意外的
+1         accurate         adj.準確的
 1         accusation         n.控訴
 1         accuse         v.把…歸咎(於)；指控
 1         actual         adj.實際的
@@ -52,8 +55,11 @@
 1         analyst         n.分析家
 1         anniversary         n.週年紀念
 1         anonymous         adj.不具名的
+1         apologize         v.道歉
 1         applicable         adj.適用的
+1         appoint         v.任命；指派
 1         apprentice         n.學徒
+1         archive         n.檔案
 1         array         n.一長列
 1         aspiration         n.願望
 1         assassinate         v.行刺
@@ -67,10 +73,13 @@
 1         attendant         n.服務員
 1         author         n.作者
 1         authority         n.權力；當局
+1         awake         adj./v.清醒的；喚醒
+1         awaken         v.意識到；使覺醒
 1         away         adv.離開；不在
+1         awkwardly         adv.笨拙地
 1         ballad         n.民謠
-1         bank         (1)n.銀行
 1         bank         (2)n./v.堤；堆積
+1         bank         (1)n.銀行
 1         baptism         n.洗禮
 1         bargaining         n.議價
 1         beard         n.(下巴上的)鬍鬚
@@ -80,6 +89,7 @@
 1         beside         prep.在旁邊
 1         beyond         prep./adv.在遠處
 1         bias         n.成見
+1         Biblical         adj.聖經的
 1         bind         v.捆；綁
 1         bishop         n.主教
 1         blackboard         n.黑板
@@ -94,6 +104,7 @@
 1         briefmg         n.簡報
 1         brood         n.一窩
 1         brook         n.小河
+1         bunch         n.一束；一群
 1         bureau         n.局；處；署
 1         burglar         n.竊賊
 1         cabbage         n.甘藍菜
@@ -102,6 +113,7 @@
 1         canvas         n帆布
 1         capable         adj.有能力的
 1         carve         v.雕刻；開拓
+1         cavalry         n.騎兵(隊)
 1         cease         v.停止
 1         cereal         n.玉蜀黍薄片
 1         chalk         n.白堊；粉筆
@@ -111,8 +123,8 @@
 1         charm         nJv.魅力；使陶醉
 1         checkup         n.檢查
 1         chimpanzee         n.黑猩猩
-1         Christianity         n.基督教
 1         click         v.使發出聲
+1         climb         v.攀爬
 1         coeducation         n.男女合校的教育
 1         colonial         adj.殖民地的
 1         colony         n.殖民地
@@ -129,6 +141,7 @@
 1         continuous         adj.連續的
 1         correlation         n.關聯
 1         counsel         n.忠告
+1         cream         n.奶油；乳脂
 1         crowded         adj.擁擠的
 1         cruel         adj.殘酷的
 1         cube         n.立方體
@@ -141,22 +154,24 @@
 1         dialect         n.方言
 1         die         v.死亡
 1         disbelieve         v.懷疑
+1         displacement         n.移位；取代
 1         dissatisfy         v.使不快
 1         doom         n./v.厄運；注定
 1         dosage         n.劑量
-1         dream         n./v.夢；做夢
 1         electronic         adj.電子的
 1         enroll         v.使加入；註冊
+1         equivalent         adj./n.相同的
 1         escort         v./n.護衛(者)
 1         exceedingly         adv.極其
 1         exhibition         n.展示會
 1         factor         n.因素；代理人
-1         flatter         v.諂媚；奉承
+1         farther         adv./adj.進一步地
 1         flatter         adj.近來的
+1         flatter         v.諂媚；奉承
 1         gauge         n.標準度量
 1         Gemini         n.雙子座
-1         gin         n.杜松子酒
 1         golden         adj.金色的；貴重的
+1         graduate         v./n.畢業；大學畢業生
 1         grim         adj.嚴厲的
 1         harassment         n.煩惱
 1         hate         v./n.憎恨
@@ -166,6 +181,7 @@
 1         hurl         v.用力投擲
 1         hurl         v.用力投擲
 1         immense         adj.極大的
+1         impolite         adj不禮貌的
 1         incur         v.招致
 1         inhabitant         n.居民
 1         inherit         v.繼承
@@ -216,7 +232,6 @@
 0         accounting         n.會計學
 0         accumulate         v.積累
 0         accuracy         n.正確(性)
-0         accurate         adj.準確的
 0         accustom         v.使習慣
 0         ache         n./v.疼痛
 0         acoustic         adj.聽覺的
@@ -241,7 +256,6 @@
 0         adjoin         v.毗連
 0         administrative         adj.行政的
 0         administrator         n.行政官員
-0         admirable         adj.令人欽佩的
 0         admiration         n.欽佩
 0         admire         v.欽佩；欣賞
 0         admission         n.加入許可；承認
@@ -358,7 +372,6 @@
 0         apart         adj./adv.分開的
 0         apartment         n.公寓大樓
 0         ape         n.大猩猩
-0         apologize         v.道歉
 0         apology         n.道歉
 0         appal         v.(=appall)使驚駭
 0         appalling         adj.令人恐懼的
@@ -374,7 +387,6 @@
 0         applicant         n.申請人
 0         application         n.應用；申請書
 0         apply         v.應用；申請
-0         appoint         v.任命；指派
 0         appointment         n.約定；指派
 0         appraisal         n.評價
 0         appreciate         v.欣賞；感激
@@ -392,7 +404,6 @@
 0         archaeology         n.考古學
 0         architect         n.建築師；設計師
 0         architecture         n.建築學；建築風格
-0         archive         n.檔案
 0         area         n.區域；範圍
 0         arena         n.活動場所(供運動、娛樂的)
 0         arithmetic         adj./n.算術的
@@ -465,12 +476,9 @@
 0         aviation         n.航空(學)
 0         avoid         v.避免；躲開
 0         await         v.等候；期待
-0         awake         adj./v.清醒的；喚醒
-0         awaken         v.意識到；使覺醒
 0         award         v./n授予；獎品
 0         awful         adj.糟透的
 0         awkward         adj.笨拙的；棘手的
-0         awkwardly         adv.笨拙地
 0         baby         n.嬰兒；寶貝
 0         bachelor         n.單身漢；學士
 0         background         n.背景
@@ -532,8 +540,8 @@
 0         bay         n.海灣
 0         BBC         n英國廣播公司
 0         beam         n.樑；光束
-0         bear         n.熊；魯莽之人
 0         bear         v.承受；忍受
+0         bear         n.熊；魯莽之人
 0         beast         n.野獸
 0         beat         n./v.敲擊；打敗
 0         beautiful         adj.美麗的
@@ -579,7 +587,6 @@
 0         beverage         n.飲料
 0         beware         v.當心
 0         bewilder         v.使混亂
-0         Biblical         adj.聖經的
 0         bid         v.出價；吩咐
 0         big         adj.大的
 0         bikini         n.三點式泳裝
@@ -618,7 +625,6 @@
 0         bloody         adj.血腥的
 0         bloom         n./v.花；開花
 0         blow         n./v.吹；吹氣；打擊
-0         blue         adj./n.藍色的
 0         blueprint         n.藍圖
 0         blues         n.勃魯斯音樂；沮喪
 0         bluff         n.虛張聲勢
@@ -712,9 +718,7 @@
 0         bullet         n.子彈
 0         bulletin         n.公報；新聞快報
 0         bully         n.恃強凌弱者
-0         bump         v./n.碰；重擊
 0         bun         n.小圓甜麵包；髮髻
-0         bunch         n.一束；一群
 0         bundle         n.捆；包裹
 0         bunk         n.臥鋪
 0         bunker         n.媒倉；掩體
@@ -801,7 +805,6 @@
 0         caution         n.謹慎
 0         cautious         adj.小心的
 0         cautiously         adv.小心地
-0         cavalry         n.騎兵(隊)
 0         cave         n.洞穴
 0         ceasefire         n.停火協定
 0         ceiling         n.天花板
@@ -926,14 +929,13 @@
 0         cliff         n.懸崖
 0         climate         n.氣候；風氣
 0         climax         n.高潮
-0         climb         v.攀爬
 0         clinic         n.診所
 0         clip         v.修剪；夾住
 0         clock         n.時鐘
 0         clockwise         adj.順時針方向的
 0         clockwork         n.發條裝置
-0         close         adj./adv.接近的
 0         close         v.關上；結束
+0         close         adj./adv.接近的
 0         closet         n.壁櫥；衣櫥
 0         closure         n.關閉
 0         cloth         n.布料；衣料
@@ -1254,7 +1256,6 @@
 0         crash         n./v.墜毀；撞擊
 0         crawl         v.爬行；蠕動
 0         crazy         adj.瘋狂的
-0         cream         n.奶油；乳脂
 0         create         v.創造
 0         creation         n.創作；萬物
 0         creativity         n.創造力
@@ -1416,7 +1417,6 @@
 0         dense         adj.密集的；稠密的
 0         dentist         n.牙科醫師
 0         depart         v.分離；啟程
-0         department         n部門；系
 0         departure         n.分離；啟程
 0         depend         v.依賴
 0         dependent         adj.依賴性強的
@@ -1557,7 +1557,6 @@
 0         dispensable         adj.可有可無的
 0         disperse         v.使散開
 0         displace         v.移開；取代
-0         displacement         n.移位；取代
 0         display         n./v.陳列
 0         displease         v.使不快
 0         disposable         adj.可丟棄的
@@ -1649,6 +1648,7 @@
 0         drawing         n素描；製圖
 0         dread         n./v.害怕
 0         dreadful         adj.可怕的
+0         dream         n./v.夢；做夢
 0         dress         n./v.女裝；打扮
 0         drift         v./n.漂流；漂浮物
 0         drill         n./v.鑽頭；鑽床
@@ -1662,7 +1662,6 @@
 0         drug         n./v.藥品；毒品
 0         drugstore         n.雜貨店
 0         drum         n./v.鼓；打鼓
-0         drunk         adj./n.喝酒醉的
 0         drunkard         n.酒鬼
 0         dry         adj./v.乾燥的；使變乾
 0         dryer         n.吹風機
@@ -1827,7 +1826,6 @@
 0         epigram         n.雋語
 0         equal         adj./n./v.相等的
 0         equality         n.相等；平等；均等
-0         equivalent         adj./n.相同的
 0         erase         v.擦掉；抹去
 0         eraser         n.擦除器(如橡皮擦)
 0         erode         v.侵蝕
@@ -1958,7 +1956,6 @@
 0         farewell         n.告別；告別詞
 0         farm         n.農莊；農場
 0         farmer         n.農人；農場經營者
-0         farther         adv./adj.進一步地
 0         fashion         n./v.時尚；風氣
 0         fast         adj./adv.快速的
 0         fasten         v.繫緊；集中注意力
@@ -2053,7 +2050,6 @@
 0         fort         n.堡壘
 0         forth         adv.向前
 0         fortune         n.財產；好運
-0         forty         adj./n.四十
 0         forward         adj./v.向前；今後
 0         found         v.創立
 0         foundation         n.建立；基金會
@@ -2123,8 +2119,8 @@
 0         gate         n.大門；柵門
 0         gather         v.收集；聚集
 0         gaze         v.凝視；注視
-0         gear         n./v.齒輪；搭上齒輪
 0         gear         n.汽車之排檔
+0         gear         n./v.齒輪；搭上齒輪
 0         gender         n.性別
 0         gene         n.基因；遺傳因子
 0         general         adj.一般的；普遍的
@@ -2198,12 +2194,10 @@
 0         gracious         adj.和藹的；雅致的
 0         grade         n./v.級別；評分
 0         gradual         adj.逐步的；平緩的
-0         graduate         v./n.畢業；大學畢業生
 0         graduation         n畢業；畢業典禮
 0         grain         n.穀粒；穀物
 0         gram         n.(重量單位)克
 0         grammar         n.文法
-0         grammatical         adj.文法上的
 0         grand         adj.雄偉的；重大的
 0         grandchild         n.(外)孫子／女
 0         granddaughter         n.孫女；外孫女
@@ -2271,8 +2265,8 @@
 0         halftvay         adj./adv.位於兩地中途的
 0         hall         n.大廳；走廊
 0         hallway         n.玄關；走廊
-0         halt         v.猶豫
 0         halt         v./n.停止；暫停
+0         halt         v.猶豫
 0         ham         n.火腿
 0         hamburger         n.漢堡
 0         hand         n./v.手；交給
@@ -2524,7 +2518,6 @@
 0         implement         v.實現
 0         implicit         adj.暗示的
 0         imply         v.暗示
-0         impolite         adj不禮貌的
 0         import         n./v.進口
 0         importance         n.重要性
 0         important         adj.重要的
@@ -2599,7 +2592,6 @@
 0         injustice         n.不公正
 0         ink         n./v.墨水；塗墨水於…
 0         inn         n.小旅館；客棧
-0         inner         adj.內在的
 0         innocence         n.清白；無知
 0         innocent         adj.清白的；無知的
 0         innovation         n.革新；創新
@@ -2705,8 +2697,8 @@
 0         jam         n.果醬；堵塞
 0         January         n.一月
 0         Japanese         n.日本人
-0         jar         n.罐；罈；瓶
 0         jar         n.刺耳的聲音
+0         jar         n.罐；罈；瓶
 0         jasmine         n.茉莉
 0         jaw         n.頜；顎；下巴
 0         jaywalk         v.不遵守交通規則而穿越馬路
@@ -2750,8 +2742,8 @@
 0         keep         v.保存
 0         ketchup         n.調味蕃茄醬
 0         kettle         n.水壺
-0         key         adj.關鍵的
 0         key         n.鑰匙；關鍵
+0         key         adj.關鍵的
 0         keyboard         n.鍵盤
 0         kick         v.踢；反衝
 0         kid         n.小孩
@@ -2795,8 +2787,8 @@
 0         lamb         n.小羊
 0         lament         v.悲傷
 0         lamp         n.燈
-0         land         v.使登陸
 0         land         n.土地
+0         land         v.使登陸
 0         landing         n.登陸
 0         landlady         n.女房束
 0         landlord         n.地主
@@ -3067,8 +3059,8 @@
 0         mate         n.同伴
 0         material         n.材料
 0         mathematical         adj.數學的
-0         matter         n.事情；問題
 0         matter         v.有關係；要緊
+0         matter         n.事情；問題
 0         mature         adj.成熟的
 0         maturity         n.成熟；完成
 0         maximum         n.最大限度
@@ -3198,8 +3190,8 @@
 0         Monday         n.星期一
 0         monetary         adj.貨幣的
 0         money         n.錢
-0         monitor         n./v.監視器；監控
 0         monitor         n.級長
+0         monitor         n./v.監視器；監控
 0         monk         n.僧侶；修道士
 0         monkey         n.猴子
 0         monopoly         n.壟斷；專利
@@ -3331,8 +3323,8 @@
 0         none         pron./adv.一點兒也沒
 0         nonetheless         adv./conj.但是；仍然
 0         nonsense         n.胡說
-0         noodle         n.笨人；傻瓜
 0         noodle         n.麵條
+0         noodle         n.笨人；傻瓜
 0         noon         n.中午
 0         nor         conj.也不
 0         normal         adj.正常的
@@ -3374,8 +3366,8 @@
 0         obedient         adj.順從的；孝順的
 0         obey         v.服從；聽從
 0         obituary         n.訃聞
-0         object         v.反對
 0         object         n.物體；目標
+0         object         v.反對
 0         objection         n.反對
 0         objective         adj.客觀的
 0         oblong         n./adj.長方形；長方形的
@@ -3516,8 +3508,8 @@
 0         paramount         adj./n.至上的；最高統治者
 0         pardon         n./v.原諒
 0         parent         n.父母
-0         park         v.停車
 0         park         n.公園
+0         park         v.停車
 0         parking         n.停車
 0         parlor         n.起居室；會客室
 0         parrot         n.鸚鵡
@@ -3771,8 +3763,8 @@
 0         potter         n./v.陶藝家；閒逛
 0         pottery         n陶器
 0         poultry         n.家禽(肉)
-0         pound         v.搗碎
 0         pound         n.磅
+0         pound         v.搗碎
 0         poverty         n.貧窮
 0         powder         n.粉末
 0         power         n.權力
@@ -4009,8 +4001,8 @@
 0         reason         n.理由
 0         reasonable         adj.有理由的；合理的
 0         reassure         v.使安心
-0         rebel         v.謀反
 0         rebel         n.反抗者
+0         rebel         v.謀反
 0         rebellion         n造反
 0         rebellious         adj.難管教的
 0         rebuild         v.重建
@@ -4563,8 +4555,8 @@
 0         sorry         adj.感到抱歉的；感到遺憾的
 0         sort         n./v.種類；把·分類
 0         soul         n.靈魂
-0         sound         adj.無恙的
 0         sound         n./v.聲音；聽起來
+0         sound         adj.無恙的
 0         soup         n.湯
 0         sour         adj.酸的
 0         source         n.來源
@@ -4615,8 +4607,8 @@
 0         sprawl         v.伸開四肢躺(坐)
 0         spray         v.噴；濺散
 0         spread         n./v.擴展
-0         spring         n.春天
 0         spring         v.跳躍
+0         spring         n.春天
 0         spur         n.馬刺；激勵
 0         squad         n.爭吵
 0         square         adj./n.四方的
@@ -4644,8 +4636,8 @@
 0         start         n./v.開始
 0         startle         v.使大吃一驚
 0         starve         v.(使)挨餓
-0         state         v.陳述
 0         state         n.狀態
+0         state         v.陳述
 0         statesman         n.政治家
 0         static         adj.靜態的
 0         station         n.車站
@@ -4720,8 +4712,8 @@
 0         student         n.學生
 0         studio         n.工作室
 0         study         n.學業
-0         stuff         n.材料
 0         stuff         v.填滿
+0         stuff         n.材料
 0         stupid         adj.愚蠢的
 0         sturdy         adj.強健的
 0         style         n.風格
@@ -4753,8 +4745,8 @@
 0         suggest         v.建議
 0         suggestion         n.提議
 0         suicide         n.自殺
-0         suit         n.一套衣服
 0         suit         v.適合
+0         suit         n.一套衣服
 0         suitable         adj.合適的
 0         suitcase         n.手提箱
 0         sum         n.總數
@@ -4978,8 +4970,8 @@
 0         timid         adj.膽小的
 0         tiny         adj.非常小的
 0         tip         n./v.小費
-0         tire         v.疲勞
 0         tire         n.輪胎
+0         tire         v.疲勞
 0         tired         adj.疲倦的
 0         tiresome         adj.令人厭煩的
 0         tissue         n.組織
@@ -5032,8 +5024,8 @@
 0         traditional         adj.傳統的
 0         tragedy         n.悲劇
 0         tragic         adj.悲慘的
-0         train         v.訓練
 0         train         n.火車
+0         train         v.訓練
 0         tranquil         adj.寧靜的
 0         tranquilizer         n.鎮靜劑
 0         transcend         v.超越
@@ -5108,8 +5100,8 @@
 0         twinkle         n./v.閃爍
 0         twist         n./v.彎曲；扭曲
 0         two         adj./n.二
-0         type         n.類型
 0         type         v.打字
+0         type         n.類型
 0         typewriter         n打字機
 0         typhoon         n.颱風
 0         typical         adj.典型的
@@ -5183,7 +5175,6 @@
 0         usage         n.使用方法
 0         use         n./v.益處；使用
 0         used         adj.舊的
-0         useful         adj.有用的
 0         usefulness         n.有效
 0         useless         adj.無用的
 0         usher         n.迎賓員
@@ -5389,8 +5380,8 @@
 0         withstand         v.抵擋
 0         witness         n./v.目擊者
 0         woe         n.悲傷
-0         wolf         n.色狼
 0         wolf         n.狼
+0         wolf         n.色狼
 0         woman         n.女人
 0         wonder         n./v.想要知道
 0         wonderful         adj.極好的
@@ -5444,6 +5435,7 @@
 -1         ace         n.么點牌；能手
 -1         act         n./v.行動；表演
 -1         actor         n.男演員
+-1         admirable         adj.令人欽佩的
 -1         afraid         adj.害怕的
 -1         after         prep./adv./adj.在…之後；以後的
 -1         afternoon         n.下午
@@ -5467,6 +5459,7 @@
 -1         best         adj./adv.最好的
 -1         bird         n.鳥
 -1         bless         v./n.為…祝福
+-1         blue         adj./n.藍色的
 -1         bomb         n./v.炸彈；轟炸
 -1         bookcase         n.書架；書櫥
 -1         both         adj./adv./pron.兩者皆
@@ -5475,6 +5468,7 @@
 -1         brown         adj./n.棕色的
 -1         bubble         n.氣泡；泡影
 -1         building         n.建築物
+-1         bump         v./n.碰；重擊
 -1         burn         v./n.燃燒；燒傷
 -1         bury         v.埋
 -1         business         n.商業；交易
@@ -5494,9 +5488,10 @@
 -1         credit         n./v.信用；賒帳
 -1         cry         v./n.哭；叫喊
 -1         dancer         n.舞者
--1         date         n./v.日期；約會
 -1         date         n.棗；棗椰樹
+-1         date         n./v.日期；約會
 -1         deep         adj./adv.深的
+-1         department         n部門；系
 -1         diary         n.日記
 -1         difficult         adj.困難的
 -1         disco         n.迪斯可舞廳/音樂
@@ -5504,6 +5499,7 @@
 -1         disease         n.疾病
 -1         dishonest         adj.不誠實的
 -1         distance         n.距離
+-1         drunk         adj./n.喝酒醉的
 -1         educated         adj.受過教育的
 -1         era         n.年代
 -1         escape         v./n.逃跑；逃避
@@ -5514,21 +5510,25 @@
 -1         festival         n.節日；歡樂
 -1         fight         v./n.打鬥；爭吵
 -1         flower         n./v.花朵；開花
+-1         forty         adj./n.四十
 -1         frequency         n.頻率；頻緊
 -1         gain         n./v.獲得；獲利
 -1         gesture         n./v.做手勢；手勢
 -1         goat         n.山羊
+-1         grammatical         adj.文法上的
 -1         grass         n.青草；草地
 -1         handsome         adj.英俊的
 -1         humor         n.幽默感
 -1         humor         n.幽默感
 -1         infinite         adj.無窮的
+-1         inner         adj.內在的
 -1         insect         n.昆蟲
 -1         jeans         n.牛仔褲
 -1         message         n.消息
 -1         negotiate         v.談判
 -1         reduce         v.減少
 -1         rest         n./v.休息
+-1         useful         adj.有用的
 -1         wait         n./v.等候
 -1         weight         n.重量
 -1         wild         adj.野生的

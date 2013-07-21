@@ -49,7 +49,7 @@ namespace EnglishVocabularyLearner {
       Stream inputStream;
       OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-      openFileDialog1.InitialDirectory = "D:\\Programming\\Projects\\EnglishVocabularyLearner";
+      openFileDialog1.InitialDirectory = @"D:\Programming\Projects\EnglishVocabularyLearner";
       openFileDialog1.Filter = "txt files (*.txt)|*.txt";
       openFileDialog1.FilterIndex = 1;
       openFileDialog1.RestoreDirectory = true;
@@ -95,11 +95,12 @@ namespace EnglishVocabularyLearner {
       System.IO.File.WriteAllText("list.txt", vocabularyFileString);
     }
 
+    // Variables for test
     private int testType;
     private int questionNumbers;
     private int nowQuestionNumber;
     private int lastQuestionNumber;
-    private int nowWrongNumber; // Test 2
+    private int nowWrongNumber; // Test type 2
     private bool isTestFinished;
 
     // Record status of every question
