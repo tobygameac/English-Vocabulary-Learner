@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -71,7 +70,7 @@ namespace EnglishVocabularyLearner {
         String[] tempStrs = Regex.Split(line, "\\ +"); // Split spaces
         List<String> strs = new List<String>();
         for (int i = 0; i < tempStrs.Length; i++) {
-          if (tempStrs[i] != "" && tempStrs[i].IndexOf(" ") == -1) { // Check for exception status
+          if (tempStrs[i] != "" && tempStrs[i].IndexOf(" ") == -1) { // Check for exception
             strs.Add(tempStrs[i]);
           }
         }
@@ -88,6 +87,7 @@ namespace EnglishVocabularyLearner {
     }
 
     private void writeNewVocabularyFile() {
+      vocList.Sort();
       String vocabularyFileString = "";
       for (int i = 0; i < vocList.Count; i++) {
         vocabularyFileString += vocList[i].score + "         " + vocList[i].text + "         " + vocList[i].translation + "\n";
@@ -238,7 +238,7 @@ namespace EnglishVocabularyLearner {
         nowWrongNumber++;
       }
 
-      for (int i = 0; i < vocList.Count; i++)
+      for (int i = 0; i < vocList.Count; i++) {
         if (vocList[i].text == questions[nowQuestionNumber].text) {
           // If correct then lower the score, otherwise higher
           vocList[i].score += (answerStatus[nowQuestionNumber] ? -1 : 1) * (Math.Abs(vocList[i].score / 2) + 1);
@@ -246,9 +246,9 @@ namespace EnglishVocabularyLearner {
           // Answer the other vocabulary, also higher
           vocList[i].score++;
         }
+      }
 
-      // Update
-      vocList.Sort();
+      // Update list file
       writeNewVocabularyFile();
 
       this.richTextBoxQuestionDone.AppendText((answerStatus[nowQuestionNumber] ? "" : "*") + questions[nowQuestionNumber].text + "\n");
@@ -277,14 +277,6 @@ namespace EnglishVocabularyLearner {
       testHandler();
     }
 
-    private void textBoxAutoFocus(object sender, EventArgs e) {
-      if ((sender as TextBox).Visible) {
-        (sender as TextBox).Select();
-      } else {
-        this.buttonNextQuestion.Select();
-      }
-    }
-
     private Random random = new Random(); // Prevent from mutil declare
 
     private void getNextQuestion() {
@@ -297,13 +289,13 @@ namespace EnglishVocabularyLearner {
         case 1:
         case 2:
         case 3:
-        case 4: // 40% chance from vocabulary with top 15% score
-          choosenNumber = random.Next((int)(vocList.Count * 0.15));
+        case 4:
+        case 5: // 50% chance from vocabulary with top 5% score
+          choosenNumber = random.Next((int)(vocList.Count * 0.05));
           break;
-        case 5:
         case 6:
         case 7:
-        case 8: // 40% chance from vocabulary with top 50% score
+        case 8: // 30% chance from vocabulary with top 50% score
           choosenNumber = random.Next((int)(vocList.Count * 0.5));
           break;
         case 9: // 10% chance from vocabulary with all score
@@ -311,10 +303,17 @@ namespace EnglishVocabularyLearner {
           break;
       }
       answerStatus.Add(false);
-      vocList.Sort();
       vocList[choosenNumber].setDefinitionsString();
       vocList[choosenNumber].setExampleString();
       questions.Add(vocList[choosenNumber]);
+    }
+
+    private void textBoxAutoFocus(object sender, EventArgs e) {
+      if ((sender as TextBox).Visible) {
+        (sender as TextBox).Select();
+      } else {
+        this.buttonNextQuestion.Select();
+      }
     }
   }
 }

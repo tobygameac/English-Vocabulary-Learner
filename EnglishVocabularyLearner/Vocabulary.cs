@@ -2,11 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EnglishVocabularyLearner {
   public class Vocabulary : IComparable<Vocabulary> {
+    public Vocabulary(String text) {
+      this.score = 0;
+      this.text = text;
+      this.translation = "";
+      this.definition = "";
+      this.example = "";
+    }
+
+    public Vocabulary(int score, String text) {
+      this.score = score;
+      this.text = text;
+      this.translation = "";
+      this.definition = "";
+      this.example = "";
+    }
+
     public Vocabulary(int score, String text, String translation) {
       this.score = score;
       this.text = text;
@@ -27,24 +42,27 @@ namespace EnglishVocabularyLearner {
     }
 
     public void setDefinitionsString() {
+      /*
       WebBrowser webBrowser = new WebBrowser();
-      webBrowser.Navigate("http://www.collinsdictionary.com/dictionary/english/" + text + "?showCookiePolicy=true");
+      webBrowser.Navigate("http://www.ldoceonline.com/dictionary/" + text);
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
 
       while (webBrowser.ReadyState != WebBrowserReadyState.Interactive && webBrowser.ReadyState != WebBrowserReadyState.Complete) {
         Application.DoEvents();
       }
+      if (webBrowser.Url.AbsoluteUri != "http://www.ldoceonline.com/dictionary/" + text) {
+        definition = "未找到範例";
+        return;
+      }
       HtmlDocument doc = webBrowser.Document;
       definition = "";
       for (int i = 0; i < doc.All.Count; i++) {
-        if (doc.All[i].GetAttribute("className") == "definitions hom-subsec") {
+        if (doc.All[i].TagName == "FTDEF") {
           String sentence = doc.All[i].InnerText;
-          if (sentence.IndexOf(text) != -1) {
-            sentence = sentence.Replace(text, "__________");
-          }
+          sentence = textFilter(sentence);
           definition += sentence;
         }
-      }
+      } */
       if (definition == "") {
         definition = "未找到範例";
       }
@@ -68,9 +86,7 @@ namespace EnglishVocabularyLearner {
           //if (doc.All[i].GetAttribute("className") == "DEF") {
           //if (doc.All[i].GetAttribute("className") == "eg") {
           String sentence = doc.All[i].InnerText;
-          if (sentence.IndexOf(text) != -1) {
-            sentence = sentence.Replace(text, "__________");
-          }
+          sentence = textFilter(sentence);
           if (sentence.IndexOf("\n") != -1) {
             sentence = sentence.Replace("\n", "\n\n");
           }
@@ -80,6 +96,13 @@ namespace EnglishVocabularyLearner {
       if (example == "") {
         example = "未找到範例";
       }
+    }
+
+    private String textFilter(String sentence) {
+      if (sentence != null && sentence != "" && sentence.IndexOf(text) != -1) {
+        sentence = sentence.Replace(text, "__________");
+      }
+      return sentence;
     }
 
     public int score;
