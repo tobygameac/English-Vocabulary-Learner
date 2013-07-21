@@ -155,58 +155,58 @@ namespace EnglishVocabularyLearner {
     }
 
     private void testHandler() {
-        if (isTestFinished) {
-          this.buttonFinishTest.Visible = true;
-        } else {
-          this.buttonFinishTest.Visible = false;
-        }
+      if (isTestFinished) {
+        this.buttonFinishTest.Visible = true;
+      } else {
+        this.buttonFinishTest.Visible = false;
+      }
 
-        String statusString, questionString;
-        // Status
-        if (testType == 1) {
-          statusString = "進度 : " + (lastQuestionNumber + 1) + "/" + questionNumbers;
-        } else {
-          statusString = "答錯數量 : " + nowWrongNumber + "/" + questionNumbers;
-        }
-        statusString += "\n目前題目 : " + (nowQuestionNumber + 1) + "/" + (lastQuestionNumber + 1);
+      String statusString, questionString;
+      // Status
+      if (testType == 1) {
+        statusString = "進度 : " + (lastQuestionNumber + 1) + "/" + questionNumbers;
+      } else {
+        statusString = "答錯數量 : " + nowWrongNumber + "/" + questionNumbers;
+      }
+      statusString += "\n目前題目 : " + (nowQuestionNumber + 1) + "/" + (lastQuestionNumber + 1);
 
-        // Question
-        Vocabulary nowVocabulary = questions[nowQuestionNumber];
-        questionString = nowVocabulary.translation + "\n";
-        if (nowQuestionNumber != lastQuestionNumber || isTestFinished) { // Already done
-          this.textBoxAnswer.Visible = false;
+      // Question
+      Vocabulary nowVocabulary = questions[nowQuestionNumber];
+      questionString = nowVocabulary.translation + "\n";
+      if (nowQuestionNumber != lastQuestionNumber || isTestFinished) { // Already done
+        this.textBoxAnswer.Visible = false;
 
-          this.richTextBoxQuestion.BackColor = answerStatus[nowQuestionNumber] ? Color.Green : Color.Red;
-          questionString += nowVocabulary.text + "\n" + answers[nowQuestionNumber];
-        } else {
-          this.textBoxAnswer.Visible = true;
-          questionString += nowVocabulary.text[0]; // Show the first alphabet
-          for (int i = 1; i < nowVocabulary.text.Length; i++) {  // Hide the others
-            this.richTextBoxQuestion.BackColor = this.BackColor;
-            questionString += Char.IsLetter(nowVocabulary.text[i]) ? "_" : nowVocabulary.text[i].ToString();
-          }
+        this.richTextBoxQuestion.BackColor = answerStatus[nowQuestionNumber] ? Color.Green : Color.Red;
+        questionString += nowVocabulary.text + "\n" + answers[nowQuestionNumber];
+      } else {
+        this.textBoxAnswer.Visible = true;
+        questionString += nowVocabulary.text[0]; // Show the first alphabet
+        for (int i = 1; i < nowVocabulary.text.Length; i++) {  // Hide the others
+          this.richTextBoxQuestion.BackColor = this.BackColor;
+          questionString += Char.IsLetter(nowVocabulary.text[i]) ? "_" : nowVocabulary.text[i].ToString();
         }
-        String newTextBoxString = statusString + "\n\n" + questionString;
-        if (this.richTextBoxQuestion.Text != newTextBoxString) { // Only Change if text is changed
-          this.richTextBoxQuestion.Text = newTextBoxString;
-        }
-        if (this.richTextBoxExapmle.Text != questions[nowQuestionNumber].example) {
-          this.richTextBoxExapmle.Text = questions[nowQuestionNumber].example;
-        }
+      }
+      String newTextBoxString = statusString + "\n\n" + questionString + "\n\n" + nowVocabulary.definition;
+      if (this.richTextBoxQuestion.Text != newTextBoxString) { // Only if text is changed
+        this.richTextBoxQuestion.Text = newTextBoxString;
+      }
+      if (this.richTextBoxExapmle.Text != nowVocabulary.example) { // Only if text is changed
+        this.richTextBoxExapmle.Text = nowVocabulary.example;
+      }
 
-        // Next button
-        if (nowQuestionNumber != lastQuestionNumber && (testType == 2 || (nowQuestionNumber != questionNumbers - 1))) {
-          this.buttonNextQuestion.Visible = true;
-        } else {
-          this.buttonNextQuestion.Visible = false;
-        }
+      // Next button
+      if (nowQuestionNumber != lastQuestionNumber && (testType == 2 || (nowQuestionNumber != questionNumbers - 1))) {
+        this.buttonNextQuestion.Visible = true;
+      } else {
+        this.buttonNextQuestion.Visible = false;
+      }
 
-        // Prev button
-        if (nowQuestionNumber != 0) {
-          this.buttonPrevQuestion.Visible = true;
-        } else {
-          this.buttonPrevQuestion.Visible = false;
-        }
+      // Prev button
+      if (nowQuestionNumber != 0) {
+        this.buttonPrevQuestion.Visible = true;
+      } else {
+        this.buttonPrevQuestion.Visible = false;
+      }
     }
 
     private void nextQuestion(object sender, EventArgs e) {
@@ -312,7 +312,8 @@ namespace EnglishVocabularyLearner {
       }
       answerStatus.Add(false);
       vocList.Sort();
-      vocList[choosenNumber].getExampleString();
+      vocList[choosenNumber].setDefinitionsString();
+      vocList[choosenNumber].setExampleString();
       questions.Add(vocList[choosenNumber]);
     }
   }
