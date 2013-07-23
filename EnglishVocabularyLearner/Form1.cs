@@ -110,6 +110,7 @@ namespace EnglishVocabularyLearner {
 
       Thread thread = new Thread(addVocabularyToPool); // Improve the speed of getting new question
       thread.SetApartmentState(ApartmentState.STA); // In order to use webBrowser in thread
+      thread.IsBackground = true; // In order to kill thread when closed
       thread.Start();
       //addVocabularyToPool();
     }
