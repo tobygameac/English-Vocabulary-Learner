@@ -109,7 +109,7 @@ namespace EnglishVocabularyLearner {
       vocabularyPool = new List<Vocabulary>();
 
       Thread thread = new Thread(addVocabularyToPool); // Improve the speed of getting new question
-      thread.SetApartmentState(ApartmentState.STA);
+      thread.SetApartmentState(ApartmentState.STA); // In order to use webBrowser in thread
       thread.Start();
       //addVocabularyToPool();
     }
@@ -137,7 +137,6 @@ namespace EnglishVocabularyLearner {
         vocList[choosenNumber].setDefinitionsString();
         vocList[choosenNumber].setExampleString();
         vocabularyPool.Add(vocList[choosenNumber]);
-        Console.WriteLine("+1");
         Thread.Sleep(300);
         //await Task.Delay(300);
       }
@@ -216,10 +215,11 @@ namespace EnglishVocabularyLearner {
       } else {
         this.textBoxAnswer.Visible = true;
         questionString += nowVocabulary.text[0]; // Show the first alphabet
-        for (int i = 1; i < nowVocabulary.text.Length; i++) {  // Hide the others
+        for (int i = 1; i < nowVocabulary.text.Length - 1; i++) {  // Hide the others
           this.richTextBoxQuestion.BackColor = this.BackColor;
           questionString += Char.IsLetter(nowVocabulary.text[i]) ? "_" : nowVocabulary.text[i].ToString();
         }
+        questionString += nowVocabulary.text[nowVocabulary.text.Length - 1];
       }
 
       String newTextBoxString = statusString + "\n\n" + questionString;
@@ -270,7 +270,7 @@ namespace EnglishVocabularyLearner {
       }
 
       this.answers.Add(this.textBoxAnswer.Text);
-      if (this.textBoxAnswer.Text == questions[nowQuestionNumber].text) {
+      if (this.textBoxAnswer.Text.ToLower() == questions[nowQuestionNumber].text.ToLower()) {
         answerStatus[nowQuestionNumber] = true;
       } else {
         answerStatus[nowQuestionNumber] = false;
