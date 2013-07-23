@@ -44,7 +44,30 @@ namespace EnglishVocabularyLearner {
       return text.CompareTo(other.text);
     }
 
-    public void setDefinitionsString() {
+    public void setImformationFromInternet() {
+      setTranslationString();
+      setDefinitionString();
+      setExampleString();
+    }
+
+    private void setTranslationString() {
+      /* WebBrowser webBrowser = new WebBrowser();
+      webBrowser.Navigate("https://translate.google.com.tw/?hl=zh-TW&tab=wT#en/zh-TW/" + text);
+      webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
+
+      while (webBrowser.ReadyState != WebBrowserReadyState.Complete) {
+        Application.DoEvents();
+      }
+
+      HtmlElement doc = webBrowser.Document.GetElementById("result_box");
+      translation += doc.InnerText;
+      Console.WriteLine(doc.InnerText);
+      if (doc.InnerText == "") {
+        translation += "未找到google翻譯";
+      } */
+    }
+
+    private void setDefinitionString() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
@@ -70,7 +93,7 @@ namespace EnglishVocabularyLearner {
       }
     }
 
-    public void setExampleString() {
+    private void setExampleString() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://sentence.yourdictionary.com/" + text);
       //webBrowser.Navigate("http://www.collinsdictionary.com/dictionary/english/" + vocList[choosenNumber].text);
