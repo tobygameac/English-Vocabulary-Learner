@@ -61,7 +61,7 @@ namespace EnglishVocabularyLearner {
       this.textBoxAnswer.VisibleChanged += new EventHandler(this.textBoxAutoFocus);
     }
 
-    private void Form1_Load(object sender, EventArgs e) {
+    private void EnglishVocabularyLeaner_Load(object sender, EventArgs e) {
       this.DoubleBuffered = true;
       Form.CheckForIllegalCrossThreadCalls = false;
     }
@@ -96,10 +96,11 @@ namespace EnglishVocabularyLearner {
             strs.Add(tempStrs[i]);
           }
         }
-        if (strs.Count == 3 && // A voc need 3 attribute, attribute 1 is score
-          (Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
-          vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], strs[2]));
-        } else {
+        if (strs.Count == 2 || strs.Count == 3) { // A voc need 3 attribute, attribute 1 is score
+          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
+            vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], strs.Count == 3 ? strs[2] : ""));
+          }
+        } else { // Parse fail
         }
       }
       textStream.Close();
@@ -126,16 +127,19 @@ namespace EnglishVocabularyLearner {
 
     private /* async */ void addVocabularyToPool() {
       while (true) {
-        while (vocList == null || vocList.Count == 0) {
-          Thread.Sleep(300);
+        if (checkBoxAutoClose.Checked && isTestFinished) {
+          // Do not need vocabulary anymore
+          return;
         }
-        while (vocabularyPool.Count >= 10) {
-          // Only need 10
-          Thread.Sleep(2000);
+        if (vocList == null || vocList.Count == 0 || vocabularyPool.Count >= 10) {
+          // Only need 10 in pool
+          // Don't use while because need to return
+          Thread.Sleep(300);
           //await Task.Delay(1000);
+          continue;
         }
         int choosenNumber = numberChooser.getNextNumber(vocList.Count);
-        vocList[choosenNumber].setImformationFromInternet();
+        vocList[choosenNumber].setInformationFromInternet();
         vocabularyPool.Add(vocList[choosenNumber]);
         Thread.Sleep(300);
         //await Task.Delay(300);
@@ -143,17 +147,18 @@ namespace EnglishVocabularyLearner {
     }
 
     private void readyToStartTest(object sender, EventArgs e) {
-      testType = (sender as Button).Name[(sender as Button).Name.Length - 1] - '0';
+      testType = (sender as Button).Name[(sender as Button).Name.Length - 1] - '0'; // Get test type from button name
       TextBox senderTextBox = (testType == 1) ? this.textBoxNumberOfTest1 : this.textBoxNumberOfTest2;
       if (!Regex.IsMatch(senderTextBox.Text, @"^[0-9]+$")) { // Only accept digit
         senderTextBox.Text = "";
         return;
-      } else {
-        questionNumbers = Convert.ToInt32(senderTextBox.Text);
-        if (questionNumbers == 0) {
-          return;
-        }
       }
+
+      questionNumbers = Convert.ToInt32(senderTextBox.Text);
+      if (questionNumbers == 0) {
+        return;
+      }
+
 
       // Hide other groups and show the test group
       this.groupBoxFileRead.Visible = false;
@@ -226,12 +231,7 @@ namespace EnglishVocabularyLearner {
       if (this.richTextBoxQuestion.Text != newTextBoxString) { // Only if text is changed
         this.richTextBoxQuestion.Text = newTextBoxString;
       }
-      if (this.richTextBoxDefinition.Text != nowVocabulary.definition) {
-        this.richTextBoxDefinition.Text = nowVocabulary.definition;
-      }
-      if (this.richTextBoxExapmle.Text != nowVocabulary.example) { // Only if text is changed
-        this.richTextBoxExapmle.Text = nowVocabulary.example;
-      }
+      this.vocabularyViewer.setVocabulary(nowVocabulary);
 
       // Next button
       if (nowQuestionNumber != lastQuestionNumber && (testType == 2 || (nowQuestionNumber != questionNumbers - 1))) {
@@ -324,7 +324,7 @@ namespace EnglishVocabularyLearner {
         return;
       }
       int choosenNumber = numberChooser.getNextNumber(vocList.Count);
-      vocList[choosenNumber].setImformationFromInternet();
+      vocList[choosenNumber].setInformationFromInternet();
       questions.Add(vocList[choosenNumber]);
     }
 

@@ -41,16 +41,15 @@
       this.buttonStartTest2 = new System.Windows.Forms.Button();
       this.checkBoxAutoClose = new System.Windows.Forms.CheckBox();
       this.groupBoxMainOperation = new System.Windows.Forms.GroupBox();
+      this.buttonAddVocabulary = new System.Windows.Forms.Button();
       this.groupBoxFileRead = new System.Windows.Forms.GroupBox();
       this.groupBoxTest = new System.Windows.Forms.GroupBox();
-      this.richTextBoxDefinition = new System.Windows.Forms.RichTextBox();
-      this.richTextBoxExapmle = new System.Windows.Forms.RichTextBox();
       this.buttonFinishTest = new System.Windows.Forms.Button();
       this.textBoxAnswer = new System.Windows.Forms.TextBox();
       this.richTextBoxQuestionDone = new System.Windows.Forms.RichTextBox();
       this.buttonPrevQuestion = new System.Windows.Forms.Button();
       this.buttonNextQuestion = new System.Windows.Forms.Button();
-      this.buttonAddVocabulary = new System.Windows.Forms.Button();
+      this.vocabularyViewer = new EnglishVocabularyLearner.VocabularyBrowser();
       this.groupBoxMainOperation.SuspendLayout();
       this.groupBoxFileRead.SuspendLayout();
       this.groupBoxTest.SuspendLayout();
@@ -74,7 +73,7 @@
       this.richTextBoxQuestion.Location = new System.Drawing.Point(10, 17);
       this.richTextBoxQuestion.Name = "richTextBoxQuestion";
       this.richTextBoxQuestion.ReadOnly = true;
-      this.richTextBoxQuestion.Size = new System.Drawing.Size(350, 262);
+      this.richTextBoxQuestion.Size = new System.Drawing.Size(291, 257);
       this.richTextBoxQuestion.TabIndex = 4;
       this.richTextBoxQuestion.Text = "";
       // 
@@ -181,60 +180,48 @@
       this.groupBoxMainOperation.Controls.Add(this.textBoxNumberOfTest1);
       this.groupBoxMainOperation.Controls.Add(this.labelWord3);
       this.groupBoxMainOperation.Controls.Add(this.labelWord1);
-      this.groupBoxMainOperation.Location = new System.Drawing.Point(12, 89);
+      this.groupBoxMainOperation.Location = new System.Drawing.Point(12, 310);
       this.groupBoxMainOperation.Name = "groupBoxMainOperation";
-      this.groupBoxMainOperation.Size = new System.Drawing.Size(317, 208);
+      this.groupBoxMainOperation.Size = new System.Drawing.Size(401, 200);
       this.groupBoxMainOperation.TabIndex = 16;
       this.groupBoxMainOperation.TabStop = false;
       this.groupBoxMainOperation.Visible = false;
+      // 
+      // buttonAddVocabulary
+      // 
+      this.buttonAddVocabulary.Location = new System.Drawing.Point(10, 15);
+      this.buttonAddVocabulary.Name = "buttonAddVocabulary";
+      this.buttonAddVocabulary.Size = new System.Drawing.Size(75, 23);
+      this.buttonAddVocabulary.TabIndex = 10;
+      this.buttonAddVocabulary.Text = "加入單字";
+      this.buttonAddVocabulary.UseVisualStyleBackColor = true;
       // 
       // groupBoxFileRead
       // 
       this.groupBoxFileRead.AutoSize = true;
       this.groupBoxFileRead.Controls.Add(this.buttonFileRead);
       this.groupBoxFileRead.Controls.Add(this.labelFileReadStatus);
-      this.groupBoxFileRead.Location = new System.Drawing.Point(12, 18);
+      this.groupBoxFileRead.Location = new System.Drawing.Point(10, 10);
       this.groupBoxFileRead.Name = "groupBoxFileRead";
-      this.groupBoxFileRead.Size = new System.Drawing.Size(317, 65);
+      this.groupBoxFileRead.Size = new System.Drawing.Size(413, 65);
       this.groupBoxFileRead.TabIndex = 17;
       this.groupBoxFileRead.TabStop = false;
       // 
       // groupBoxTest
       // 
       this.groupBoxTest.AutoSize = true;
-      this.groupBoxTest.Controls.Add(this.richTextBoxDefinition);
-      this.groupBoxTest.Controls.Add(this.richTextBoxExapmle);
       this.groupBoxTest.Controls.Add(this.buttonFinishTest);
       this.groupBoxTest.Controls.Add(this.textBoxAnswer);
       this.groupBoxTest.Controls.Add(this.richTextBoxQuestionDone);
       this.groupBoxTest.Controls.Add(this.buttonPrevQuestion);
       this.groupBoxTest.Controls.Add(this.buttonNextQuestion);
       this.groupBoxTest.Controls.Add(this.richTextBoxQuestion);
-      this.groupBoxTest.Location = new System.Drawing.Point(12, 18);
+      this.groupBoxTest.Location = new System.Drawing.Point(10, 10);
       this.groupBoxTest.Name = "groupBoxTest";
-      this.groupBoxTest.Size = new System.Drawing.Size(1007, 410);
+      this.groupBoxTest.Size = new System.Drawing.Size(413, 416);
       this.groupBoxTest.TabIndex = 18;
       this.groupBoxTest.TabStop = false;
       this.groupBoxTest.Visible = false;
-      // 
-      // richTextBoxDefinition
-      // 
-      this.richTextBoxDefinition.BackColor = System.Drawing.SystemColors.Control;
-      this.richTextBoxDefinition.Location = new System.Drawing.Point(323, 17);
-      this.richTextBoxDefinition.Name = "richTextBoxDefinition";
-      this.richTextBoxDefinition.ReadOnly = true;
-      this.richTextBoxDefinition.Size = new System.Drawing.Size(550, 180);
-      this.richTextBoxDefinition.TabIndex = 9;
-      this.richTextBoxDefinition.Text = "";
-      // 
-      // richTextBoxExapmle
-      // 
-      this.richTextBoxExapmle.Location = new System.Drawing.Point(323, 203);
-      this.richTextBoxExapmle.Name = "richTextBoxExapmle";
-      this.richTextBoxExapmle.ReadOnly = true;
-      this.richTextBoxExapmle.Size = new System.Drawing.Size(550, 180);
-      this.richTextBoxExapmle.TabIndex = 8;
-      this.richTextBoxExapmle.Text = "";
       // 
       // buttonFinishTest
       // 
@@ -255,10 +242,10 @@
       // 
       // richTextBoxQuestionDone
       // 
-      this.richTextBoxQuestionDone.Location = new System.Drawing.Point(888, 17);
+      this.richTextBoxQuestionDone.Location = new System.Drawing.Point(323, 17);
       this.richTextBoxQuestionDone.Name = "richTextBoxQuestionDone";
       this.richTextBoxQuestionDone.ReadOnly = true;
-      this.richTextBoxQuestionDone.Size = new System.Drawing.Size(100, 372);
+      this.richTextBoxQuestionDone.Size = new System.Drawing.Size(78, 372);
       this.richTextBoxQuestionDone.TabIndex = 6;
       this.richTextBoxQuestionDone.Text = "";
       // 
@@ -280,26 +267,27 @@
       this.buttonNextQuestion.Text = "Next ->";
       this.buttonNextQuestion.UseVisualStyleBackColor = true;
       // 
-      // buttonAddVocabulary
+      // vocabularyViewer
       // 
-      this.buttonAddVocabulary.Location = new System.Drawing.Point(10, 15);
-      this.buttonAddVocabulary.Name = "buttonAddVocabulary";
-      this.buttonAddVocabulary.Size = new System.Drawing.Size(75, 23);
-      this.buttonAddVocabulary.TabIndex = 10;
-      this.buttonAddVocabulary.Text = "加入單字";
-      this.buttonAddVocabulary.UseVisualStyleBackColor = true;
+      this.vocabularyViewer.Location = new System.Drawing.Point(430, 10);
+      this.vocabularyViewer.Name = "vocabularyViewer";
+      this.vocabularyViewer.Size = new System.Drawing.Size(550, 500);
+      this.vocabularyViewer.TabIndex = 19;
+      this.vocabularyViewer.TabStop = false;
+      this.vocabularyViewer.Text = "定義及範例";
       // 
       // EnglishVocabularyLeaner
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(1031, 433);
+      this.ClientSize = new System.Drawing.Size(984, 512);
+      this.Controls.Add(this.vocabularyViewer);
       this.Controls.Add(this.groupBoxFileRead);
       this.Controls.Add(this.groupBoxMainOperation);
       this.Controls.Add(this.groupBoxTest);
       this.Name = "EnglishVocabularyLeaner";
       this.Text = "英文單字學習程式";
-      this.Load += new System.EventHandler(this.Form1_Load);
+      this.Load += new System.EventHandler(this.EnglishVocabularyLeaner_Load);
       this.groupBoxMainOperation.ResumeLayout(false);
       this.groupBoxMainOperation.PerformLayout();
       this.groupBoxFileRead.ResumeLayout(false);
@@ -333,9 +321,8 @@
     private System.Windows.Forms.TextBox textBoxAnswer;
     private System.Windows.Forms.RichTextBox richTextBoxQuestionDone;
     private System.Windows.Forms.Button buttonFinishTest;
-    private System.Windows.Forms.RichTextBox richTextBoxExapmle;
-    private System.Windows.Forms.RichTextBox richTextBoxDefinition;
     private System.Windows.Forms.Button buttonAddVocabulary;
+    private VocabularyBrowser vocabularyViewer;
 
   }
 }

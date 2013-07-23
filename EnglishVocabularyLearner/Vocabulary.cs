@@ -6,35 +6,37 @@ using System.Windows.Forms;
 
 namespace EnglishVocabularyLearner {
   public class Vocabulary : IComparable<Vocabulary> {
-    public int score;
-    public String text, translation, definition, example;
+    public int score; // Using for rank
+    public String text, translation; // Data from the list
+    public String definition, example; // Data from Internet
+
+    private bool alreadyGetInformationFromInternet;
 
     public Vocabulary(String text) {
-      this.score = 0;
+      inital();
       this.text = text;
-      this.translation = "";
-      this.definition = "";
-      this.example = "";
     }
 
     public Vocabulary(int score, String text) {
+      inital();
       this.score = score;
       this.text = text;
-      this.translation = "";
-      this.definition = "";
-      this.example = "";
     }
 
     public Vocabulary(int score, String text, String translation) {
+      inital();
       this.score = score;
       this.text = text;
       this.translation = translation;
-      this.definition = "";
-      this.example = "";
     }
 
-    public bool Equals(Vocabulary other) {
-      return (this.score == other.score && this.text == other.text && this.translation == other.translation);
+    private void inital() {
+      this.score = 0;
+      this.text = "";
+      this.translation = "";
+      this.definition = "";
+      this.example = "";
+      alreadyGetInformationFromInternet = false;
     }
 
     public int CompareTo(Vocabulary other) {
@@ -44,13 +46,17 @@ namespace EnglishVocabularyLearner {
       return text.CompareTo(other.text);
     }
 
-    public void setImformationFromInternet() {
-      setTranslationString();
-      setDefinitionString();
-      setExampleString();
+    public void setInformationFromInternet() {
+      if (alreadyGetInformationFromInternet) {
+        return;
+      }
+      setTranslationStringFromInternet();
+      setDefinitionStringFromInternet();
+      setExampleStringFromInternet();
+      alreadyGetInformationFromInternet = true;
     }
 
-    private void setTranslationString() {
+    private void setTranslationStringFromInternet() {
       /* WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("https://translate.google.com.tw/?hl=zh-TW&tab=wT#en/zh-TW/" + text);
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
@@ -67,7 +73,7 @@ namespace EnglishVocabularyLearner {
       } */
     }
 
-    private void setDefinitionString() {
+    private void setDefinitionStringFromInternet() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
@@ -93,7 +99,7 @@ namespace EnglishVocabularyLearner {
       }
     }
 
-    private void setExampleString() {
+    private void setExampleStringFromInternet() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://sentence.yourdictionary.com/" + text);
       //webBrowser.Navigate("http://www.collinsdictionary.com/dictionary/english/" + vocList[choosenNumber].text);
@@ -123,7 +129,7 @@ namespace EnglishVocabularyLearner {
       }
     }
 
-    private String textFilter(String sentence) {
+    private String textFilter(String sentence) { // Hide the text in a string
       String newString = text[0].ToString();
       for (int i = 1; i < text.Length - 1; i++)
         newString += "_";
