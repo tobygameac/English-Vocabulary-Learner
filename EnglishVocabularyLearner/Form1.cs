@@ -8,11 +8,33 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace EnglishVocabularyLearner {
 
   public partial class Form1 : Form {
     private List<Vocabulary> vocList = new List<Vocabulary>();
+
+    // Vocabulary Pool, in order to improve the speed of getting new question
+    private List<Vocabulary> vocabularyPool;
+
+    // Choose index from the list
+    NumberChooser numberChooser = new NumberChooser();
+
+    // Variables for test
+    private int testType;
+    private int questionNumbers;
+    private int nowQuestionNumber;
+    private int lastQuestionNumber;
+    private int nowWrongNumber; // Test type 2
+    private bool isTestFinished;
+
+    // Record status of every question
+    private List<Vocabulary> questions;
+    private List<String> answers;
+    private List<bool> answerStatus;
+
 
     public Form1() {
       InitializeComponent();
@@ -84,6 +106,12 @@ namespace EnglishVocabularyLearner {
       this.labelFileReadStatus.Text = "讀取成功數量 / 檔案行數 : " + vocList.Count + " / " + lineCount;
       this.groupBoxMainOperation.Visible = true;
       this.buttonFileRead.Text = "更換單字庫";
+      vocabularyPool = new List<Vocabulary>();
+
+      Thread thread = new Thread(addVocabularyToPool); // Improve the speed of getting new question
+      thread.SetApartmentState(ApartmentState.STA);
+      thread.Start();
+      //addVocabularyToPool();
     }
 
     private void writeNewVocabularyFile() {
@@ -95,18 +123,25 @@ namespace EnglishVocabularyLearner {
       System.IO.File.WriteAllText("list.txt", vocabularyFileString);
     }
 
-    // Variables for test
-    private int testType;
-    private int questionNumbers;
-    private int nowQuestionNumber;
-    private int lastQuestionNumber;
-    private int nowWrongNumber; // Test type 2
-    private bool isTestFinished;
-
-    // Record status of every question
-    private List<Vocabulary> questions;
-    private List<String> answers;
-    private List<bool> answerStatus;
+    private /* async */ void addVocabularyToPool() {
+      while (true) {
+        while (vocList == null || vocList.Count == 0) {
+          Thread.Sleep(300);
+        }
+        while (vocabularyPool.Count >= 10) {
+          // Only need 10
+          Thread.Sleep(2000);
+          //await Task.Delay(1000);
+        }
+        int choosenNumber = numberChooser.getNextNumber(vocList.Count);
+        vocList[choosenNumber].setDefinitionsString();
+        vocList[choosenNumber].setExampleString();
+        vocabularyPool.Add(vocList[choosenNumber]);
+        Console.WriteLine("+1");
+        Thread.Sleep(300);
+        //await Task.Delay(300);
+      }
+    }
 
     private void readyToStartTest(object sender, EventArgs e) {
       testType = (sender as Button).Name[(sender as Button).Name.Length - 1] - '0';
@@ -186,9 +221,13 @@ namespace EnglishVocabularyLearner {
           questionString += Char.IsLetter(nowVocabulary.text[i]) ? "_" : nowVocabulary.text[i].ToString();
         }
       }
-      String newTextBoxString = statusString + "\n\n" + questionString + "\n\n" + nowVocabulary.definition;
+
+      String newTextBoxString = statusString + "\n\n" + questionString;
       if (this.richTextBoxQuestion.Text != newTextBoxString) { // Only if text is changed
         this.richTextBoxQuestion.Text = newTextBoxString;
+      }
+      if (this.richTextBoxDefinition.Text != nowVocabulary.definition) {
+        this.richTextBoxDefinition.Text = nowVocabulary.definition;
       }
       if (this.richTextBoxExapmle.Text != nowVocabulary.example) { // Only if text is changed
         this.richTextBoxExapmle.Text = nowVocabulary.example;
@@ -277,32 +316,14 @@ namespace EnglishVocabularyLearner {
       testHandler();
     }
 
-    private Random random = new Random(); // Prevent from mutil declare
-
     private void getNextQuestion() {
-      int dice = random.Next(10);
-      int choosenNumber = 0;
-      switch (dice) {
-        case 0: // 10% chance from vocabulary with top 1% score
-          choosenNumber = random.Next((int)(vocList.Count * 0.01));
-          break;
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5: // 50% chance from vocabulary with top 5% score
-          choosenNumber = random.Next((int)(vocList.Count * 0.05));
-          break;
-        case 6:
-        case 7:
-        case 8: // 30% chance from vocabulary with top 50% score
-          choosenNumber = random.Next((int)(vocList.Count * 0.5));
-          break;
-        case 9: // 10% chance from vocabulary with all score
-          choosenNumber = random.Next((int)(vocList.Count * 1.0));
-          break;
-      }
       answerStatus.Add(false);
+      if (vocabularyPool.Count > 0) { // Get vocabulary from the pool
+        questions.Add(vocabularyPool[0]);
+        vocabularyPool.RemoveAt(0);
+        return;
+      }
+      int choosenNumber = numberChooser.getNextNumber(vocList.Count);
       vocList[choosenNumber].setDefinitionsString();
       vocList[choosenNumber].setExampleString();
       questions.Add(vocList[choosenNumber]);

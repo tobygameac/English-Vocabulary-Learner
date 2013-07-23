@@ -6,6 +6,9 @@ using System.Windows.Forms;
 
 namespace EnglishVocabularyLearner {
   public class Vocabulary : IComparable<Vocabulary> {
+    public int score;
+    public String text, translation, definition, example;
+
     public Vocabulary(String text) {
       this.score = 0;
       this.text = text;
@@ -42,27 +45,26 @@ namespace EnglishVocabularyLearner {
     }
 
     public void setDefinitionsString() {
-      /*
       WebBrowser webBrowser = new WebBrowser();
-      webBrowser.Navigate("http://www.ldoceonline.com/dictionary/" + text);
+      webBrowser.Navigate("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
 
-      while (webBrowser.ReadyState != WebBrowserReadyState.Interactive && webBrowser.ReadyState != WebBrowserReadyState.Complete) {
+      while (webBrowser.ReadyState != WebBrowserReadyState.Complete) {
         Application.DoEvents();
       }
-      if (webBrowser.Url.AbsoluteUri != "http://www.ldoceonline.com/dictionary/" + text) {
+      /* if (webBrowser.Url.AbsoluteUri != "http://dictionary.reference.com/browse" + text) {
         definition = "未找到範例";
         return;
-      }
+      } */
       HtmlDocument doc = webBrowser.Document;
       definition = "";
       for (int i = 0; i < doc.All.Count; i++) {
-        if (doc.All[i].TagName == "FTDEF") {
+        if (doc.All[i].TagName == "LI") {
           String sentence = doc.All[i].InnerText;
           sentence = textFilter(sentence);
-          definition += sentence;
+          definition += sentence + "\n\n";
         }
-      } */
+      }
       if (definition == "") {
         definition = "未找到範例";
       }
@@ -76,7 +78,7 @@ namespace EnglishVocabularyLearner {
       //webBrowser.Navigate("http://dictionary.cambridge.org/dictionary/learner-english/" + vocList[choosenNumber].text + "?q=" + vocList[choosenNumber].text);
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
 
-      while (webBrowser.ReadyState != WebBrowserReadyState.Interactive && webBrowser.ReadyState != WebBrowserReadyState.Complete) {
+      while (webBrowser.ReadyState != WebBrowserReadyState.Complete) {
         Application.DoEvents();
       }
       HtmlDocument doc = webBrowser.Document;
@@ -99,13 +101,14 @@ namespace EnglishVocabularyLearner {
     }
 
     private String textFilter(String sentence) {
+      String newString = text[0].ToString();
+      for (int i = 1; i < text.Length - 1; i++)
+        newString += "_";
+      newString += text[text.Length - 1].ToString();
       if (sentence != null && sentence != "" && sentence.IndexOf(text) != -1) {
-        sentence = sentence.Replace(text, "__________");
+        sentence = sentence.Replace(text, newString);
       }
       return sentence;
     }
-
-    public int score;
-    public String text, translation, definition, example;
   }
 }

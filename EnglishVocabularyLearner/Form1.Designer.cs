@@ -43,6 +43,7 @@
       this.groupBoxMainOperation = new System.Windows.Forms.GroupBox();
       this.groupBoxFileRead = new System.Windows.Forms.GroupBox();
       this.groupBoxTest = new System.Windows.Forms.GroupBox();
+      this.richTextBoxDefinition = new System.Windows.Forms.RichTextBox();
       this.richTextBoxExapmle = new System.Windows.Forms.RichTextBox();
       this.buttonFinishTest = new System.Windows.Forms.Button();
       this.textBoxAnswer = new System.Windows.Forms.TextBox();
@@ -72,7 +73,7 @@
       this.richTextBoxQuestion.Location = new System.Drawing.Point(10, 17);
       this.richTextBoxQuestion.Name = "richTextBoxQuestion";
       this.richTextBoxQuestion.ReadOnly = true;
-      this.richTextBoxQuestion.Size = new System.Drawing.Size(373, 262);
+      this.richTextBoxQuestion.Size = new System.Drawing.Size(307, 262);
       this.richTextBoxQuestion.TabIndex = 4;
       this.richTextBoxQuestion.Text = "";
       // 
@@ -199,6 +200,7 @@
       // groupBoxTest
       // 
       this.groupBoxTest.AutoSize = true;
+      this.groupBoxTest.Controls.Add(this.richTextBoxDefinition);
       this.groupBoxTest.Controls.Add(this.richTextBoxExapmle);
       this.groupBoxTest.Controls.Add(this.buttonFinishTest);
       this.groupBoxTest.Controls.Add(this.textBoxAnswer);
@@ -213,18 +215,28 @@
       this.groupBoxTest.TabStop = false;
       this.groupBoxTest.Visible = false;
       // 
+      // richTextBoxDefinition
+      // 
+      this.richTextBoxDefinition.BackColor = System.Drawing.SystemColors.Control;
+      this.richTextBoxDefinition.Location = new System.Drawing.Point(323, 17);
+      this.richTextBoxDefinition.Name = "richTextBoxDefinition";
+      this.richTextBoxDefinition.ReadOnly = true;
+      this.richTextBoxDefinition.Size = new System.Drawing.Size(550, 180);
+      this.richTextBoxDefinition.TabIndex = 9;
+      this.richTextBoxDefinition.Text = "";
+      // 
       // richTextBoxExapmle
       // 
-      this.richTextBoxExapmle.Location = new System.Drawing.Point(389, 17);
+      this.richTextBoxExapmle.Location = new System.Drawing.Point(323, 203);
       this.richTextBoxExapmle.Name = "richTextBoxExapmle";
       this.richTextBoxExapmle.ReadOnly = true;
-      this.richTextBoxExapmle.Size = new System.Drawing.Size(493, 372);
+      this.richTextBoxExapmle.Size = new System.Drawing.Size(550, 180);
       this.richTextBoxExapmle.TabIndex = 8;
       this.richTextBoxExapmle.Text = "";
       // 
       // buttonFinishTest
       // 
-      this.buttonFinishTest.Location = new System.Drawing.Point(283, 366);
+      this.buttonFinishTest.Location = new System.Drawing.Point(217, 366);
       this.buttonFinishTest.Name = "buttonFinishTest";
       this.buttonFinishTest.Size = new System.Drawing.Size(100, 23);
       this.buttonFinishTest.TabIndex = 7;
@@ -236,7 +248,7 @@
       this.textBoxAnswer.Font = new System.Drawing.Font("PMingLiU", 20F);
       this.textBoxAnswer.Location = new System.Drawing.Point(10, 285);
       this.textBoxAnswer.Name = "textBoxAnswer";
-      this.textBoxAnswer.Size = new System.Drawing.Size(373, 39);
+      this.textBoxAnswer.Size = new System.Drawing.Size(307, 39);
       this.textBoxAnswer.TabIndex = 5;
       // 
       // richTextBoxQuestionDone
@@ -311,6 +323,7 @@
     private System.Windows.Forms.RichTextBox richTextBoxQuestionDone;
     private System.Windows.Forms.Button buttonFinishTest;
     private System.Windows.Forms.RichTextBox richTextBoxExapmle;
+    private System.Windows.Forms.RichTextBox richTextBoxDefinition;
 
   }
 }
