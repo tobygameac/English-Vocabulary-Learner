@@ -38,7 +38,7 @@ namespace EnglishVocabularyLearner {
 
     public EnglishVocabularyLeaner() {
       InitializeComponent();
-      
+
       //GetVocabularyList();
 
       try { // Read list.txt in the same folder as default
@@ -59,6 +59,7 @@ namespace EnglishVocabularyLearner {
       this.buttonPrevQuestion.Click += new EventHandler(this.prevQuestion);
       this.buttonFinishTest.Click += new EventHandler(this.readyToCloseTest);
 
+      this.textBoxVocabulary.KeyDown += new KeyEventHandler(this.submitVocabulary);
       this.textBoxAnswer.KeyDown += new KeyEventHandler(this.submitAnswer);
       this.textBoxAnswer.VisibleChanged += new EventHandler(this.textBoxAutoFocus);
     }
@@ -87,7 +88,7 @@ namespace EnglishVocabularyLearner {
 
     private void inputStreamParser(Stream inputStream) {
       StreamReader textStream = new StreamReader(inputStream);
-      int lineCount = 0;
+      int lineCount = 0, successCount = 0;
       while (textStream.Peek() >= 0) {
         lineCount++;
         String line = textStream.ReadLine();
@@ -101,6 +102,7 @@ namespace EnglishVocabularyLearner {
         if (strs.Count == 2 || strs.Count == 3) { // A voc need 3 attribute, attribute 1 is score
           if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
             vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], strs.Count == 3 ? strs[2] : ""));
+            successCount++;
           }
         } else if (strs.Count > 3) {
           if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
@@ -109,15 +111,16 @@ namespace EnglishVocabularyLearner {
               tempTranslations += tempStrs[i] + " ";
             }
             vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], tempTranslations));
+            successCount++;
           }
         } else { // Parse fail
         }
       }
       textStream.Close();
-      this.labelFileReadStatus.Text = "讀取成功數量 / 檔案行數 : " + vocList.Count + " / " + lineCount;
+      this.labelFileReadStatus.Text = "讀取成功數量 / 檔案行數 / 總成功數 : " + successCount + " / " + lineCount + " / " + vocList.Count;
       this.groupBoxMainOperation.Visible = true;
       this.groupBoxTestOperation.Visible = true;
-      this.buttonFileRead.Text = "更換單字庫";
+      this.buttonFileRead.Text = "加入單字庫";
       vocabularyPool = new List<Vocabulary>();
 
       Thread thread = new Thread(addVocabularyToPool); // Improve the speed of getting new question
@@ -243,7 +246,7 @@ namespace EnglishVocabularyLearner {
       if (this.richTextBoxQuestion.Text != newTextBoxString) { // Only if text is changed
         this.richTextBoxQuestion.Text = newTextBoxString;
       }
-      this.vocabularyViewer.setVocabulary(nowVocabulary);
+      this.vocabularyBrowser.setVocabulary(nowVocabulary);
 
       // Next button
       if (nowQuestionNumber != lastQuestionNumber && (testType == 2 || (nowQuestionNumber != questionNumbers - 1))) {
@@ -298,10 +301,10 @@ namespace EnglishVocabularyLearner {
           vocList[i].score++;
         }
       }
-      
+
       // Update list file
       writeNewVocabularyFile();
-      
+
       this.richTextBoxQuestionDone.AppendText((answerStatus[nowQuestionNumber] ? "" : "*") + questions[nowQuestionNumber].text + "\n");
       if (testType == 1) {
         if (nowQuestionNumber == questionNumbers - 1) {
@@ -326,6 +329,28 @@ namespace EnglishVocabularyLearner {
         nowQuestionNumber++;
       }
       testHandler();
+    }
+
+    private void submitVocabulary(object sender, KeyEventArgs e) {
+      if (e.KeyCode != Keys.Enter || !this.textBoxVocabulary.Visible) {
+        return;
+      }
+      bool alreadyInList = false;
+
+      Vocabulary vocabulary = new Vocabulary(this.textBoxVocabulary.Text.ToLower());
+      vocabulary.setInformationFromInternet();
+      this.vocabularyBrowser.setVocabulary(vocabulary);
+
+      for (int i = 0; i < vocList.Count && !alreadyInList; i++)
+        if (vocList[i].text.ToLower() == vocabulary.text.ToLower()) {
+          alreadyInList = true;
+          this.richTextBoxVocabularyInformation.Text = vocList[i].translation;
+          this.buttonVocabularyOperation.Text = "修改單字";
+        }
+      if (!alreadyInList) {
+        this.buttonVocabularyOperation.Text = "新增單字";
+        this.buttonVocabularyOperation.Visible = true;
+      }
     }
 
     private void getNextQuestion() {

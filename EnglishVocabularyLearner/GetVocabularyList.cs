@@ -9,9 +9,12 @@ namespace EnglishVocabularyLearner {
   public partial class EnglishVocabularyLeaner {
 
     private List<Vocabulary> list = new List<Vocabulary>();
-    private String[] urls = {"http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=17&Letter=", // 學測
-                             "http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=14&Letter=", // 指考
-                             "http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=4"}; // GEPT
+    private String[] urls = {
+     "http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=17&Letter=", // 學測
+     "http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=14&Letter=", // 指考
+     "http://www.taiwantestcentral.com/WordList/WordListByName.aspx?MainCategoryID=4" // GEPT
+    };
+
     public void GetVocabularyList() {
       WebBrowser webBrowser = new WebBrowser();
       for (int type = 0; type < urls.Length; type++) {
