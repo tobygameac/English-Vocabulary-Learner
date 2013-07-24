@@ -50,10 +50,10 @@ namespace EnglishVocabularyLearner {
       if (alreadyGetInformationFromInternet) {
         return;
       }
-      setTranslationStringFromInternet();
-      setDefinitionStringFromInternet();
-      setExampleStringFromInternet();
       alreadyGetInformationFromInternet = true;
+       setTranslationStringFromInternet();
+       setDefinitionStringFromInternet();
+       setExampleStringFromInternet();
     }
 
     private void setTranslationStringFromInternet() {
@@ -66,6 +66,7 @@ namespace EnglishVocabularyLearner {
       }
 
       HtmlElement doc = webBrowser.Document.GetElementById("result_box");
+      webBrowser.Dispose();
       translation += doc.InnerText;
       Console.WriteLine(doc.InnerText);
       if (doc.InnerText == "") {
@@ -86,6 +87,7 @@ namespace EnglishVocabularyLearner {
         return;
       } */
       HtmlDocument doc = webBrowser.Document;
+      webBrowser.Dispose();
       definition = "";
       for (int i = 0; i < doc.All.Count; i++) {
         if (doc.All[i].TagName == "LI") {
@@ -107,10 +109,11 @@ namespace EnglishVocabularyLearner {
       //webBrowser.Navigate("http://dictionary.cambridge.org/dictionary/learner-english/" + vocList[choosenNumber].text + "?q=" + vocList[choosenNumber].text);
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
 
-      while (webBrowser.ReadyState != WebBrowserReadyState.Complete) {
+      while (webBrowser.ReadyState != WebBrowserReadyState.Complete && webBrowser.ReadyState != WebBrowserReadyState.Complete) {
         Application.DoEvents();
       }
       HtmlDocument doc = webBrowser.Document;
+      webBrowser.Dispose();
       example = "";
       for (int i = 0; i < doc.All.Count; i++) {
         if (doc.All[i].GetAttribute("className") == "example") {

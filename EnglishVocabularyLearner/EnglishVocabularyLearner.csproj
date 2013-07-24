@@ -53,6 +53,9 @@
     <Compile Include="EnglishVocabularyLeaner.Designer.cs">
       <DependentUpon>EnglishVocabularyLeaner.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetVocabularyList.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NumberChooser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

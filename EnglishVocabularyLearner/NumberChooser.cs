@@ -16,8 +16,8 @@ namespace EnglishVocabularyLearner {
       int dice = random.Next(10);
       int choosenNumber = 0;
       switch (dice) {
-        case 0: // 10% chance from vocabulary with top 1% score
-          choosenNumber = random.Next((int)(max * 0.01));
+        case 0: // 10% chance from vocabulary with top 0.5% score
+          choosenNumber = random.Next((int)(max * 0.005));
           break;
         case 1:
         case 2:

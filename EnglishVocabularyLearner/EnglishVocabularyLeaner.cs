@@ -38,6 +38,8 @@ namespace EnglishVocabularyLearner {
 
     public EnglishVocabularyLeaner() {
       InitializeComponent();
+      
+      //GetVocabularyList();
 
       try { // Read list.txt in the same folder as default
         FileStream fileStream = new FileStream("list.txt", FileMode.Open, FileAccess.Read);
@@ -100,12 +102,21 @@ namespace EnglishVocabularyLearner {
           if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
             vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], strs.Count == 3 ? strs[2] : ""));
           }
+        } else if (strs.Count > 3) {
+          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
+            String tempTranslations = "";
+            for (int i = 2; i < tempStrs.Length; i++) {
+              tempTranslations += tempStrs[i] + " ";
+            }
+            vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], tempTranslations));
+          }
         } else { // Parse fail
         }
       }
       textStream.Close();
       this.labelFileReadStatus.Text = "讀取成功數量 / 檔案行數 : " + vocList.Count + " / " + lineCount;
       this.groupBoxMainOperation.Visible = true;
+      this.groupBoxTestOperation.Visible = true;
       this.buttonFileRead.Text = "更換單字庫";
       vocabularyPool = new List<Vocabulary>();
 
@@ -131,7 +142,7 @@ namespace EnglishVocabularyLearner {
           // Do not need vocabulary anymore
           return;
         }
-        if (vocList == null || vocList.Count == 0 || vocabularyPool.Count >= 10) {
+        if (vocList == null || vocList.Count == 0 || vocabularyPool.Count >= 5) {
           // Only need 10 in pool
           // Don't use while because need to return
           Thread.Sleep(300);
@@ -139,9 +150,9 @@ namespace EnglishVocabularyLearner {
           continue;
         }
         int choosenNumber = numberChooser.getNextNumber(vocList.Count);
-        vocList[choosenNumber].setInformationFromInternet();
         vocabularyPool.Add(vocList[choosenNumber]);
-        Thread.Sleep(300);
+        vocabularyPool[vocabularyPool.Count - 1].setInformationFromInternet();
+        Thread.Sleep(50);
         //await Task.Delay(300);
       }
     }
@@ -159,10 +170,10 @@ namespace EnglishVocabularyLearner {
         return;
       }
 
-
       // Hide other groups and show the test group
       this.groupBoxFileRead.Visible = false;
       this.groupBoxMainOperation.Visible = false;
+      this.groupBoxTestOperation.Visible = false;
       this.groupBoxTest.Visible = true;
 
       // Initial
@@ -187,6 +198,7 @@ namespace EnglishVocabularyLearner {
       }
       this.groupBoxFileRead.Visible = true;
       this.groupBoxMainOperation.Visible = true;
+      this.groupBoxTestOperation.Visible = true;
       this.groupBoxTest.Visible = false; // Hide other groups and show the main group
 
       this.ControlBox = true;
@@ -235,16 +247,16 @@ namespace EnglishVocabularyLearner {
 
       // Next button
       if (nowQuestionNumber != lastQuestionNumber && (testType == 2 || (nowQuestionNumber != questionNumbers - 1))) {
-        this.buttonNextQuestion.Visible = true;
+        this.buttonNextQuestion.Enabled = true;
       } else {
-        this.buttonNextQuestion.Visible = false;
+        this.buttonNextQuestion.Enabled = false;
       }
 
       // Prev button
       if (nowQuestionNumber != 0) {
-        this.buttonPrevQuestion.Visible = true;
+        this.buttonPrevQuestion.Enabled = true;
       } else {
-        this.buttonPrevQuestion.Visible = false;
+        this.buttonPrevQuestion.Enabled = false;
       }
     }
 
@@ -278,18 +290,18 @@ namespace EnglishVocabularyLearner {
       }
 
       for (int i = 0; i < vocList.Count; i++) {
-        if (vocList[i].text == questions[nowQuestionNumber].text) {
+        if (vocList[i].text.ToLower() == questions[nowQuestionNumber].text.ToLower()) {
           // If correct then lower the score, otherwise higher
           vocList[i].score += (answerStatus[nowQuestionNumber] ? -1 : 1) * (Math.Abs(vocList[i].score / 2) + 1);
-        } else if (!answerStatus[nowQuestionNumber] && vocList[i].text == textBoxAnswer.Text) {
+        } else if (!answerStatus[nowQuestionNumber] && vocList[i].text.ToLower() == textBoxAnswer.Text.ToLower()) {
           // Answer the other vocabulary, also higher
           vocList[i].score++;
         }
       }
-
+      
       // Update list file
       writeNewVocabularyFile();
-
+      
       this.richTextBoxQuestionDone.AppendText((answerStatus[nowQuestionNumber] ? "" : "*") + questions[nowQuestionNumber].text + "\n");
       if (testType == 1) {
         if (nowQuestionNumber == questionNumbers - 1) {
@@ -324,8 +336,8 @@ namespace EnglishVocabularyLearner {
         return;
       }
       int choosenNumber = numberChooser.getNextNumber(vocList.Count);
-      vocList[choosenNumber].setInformationFromInternet();
       questions.Add(vocList[choosenNumber]);
+      questions[questions.Count - 1].setInformationFromInternet();
     }
 
     private void textBoxAutoFocus(object sender, EventArgs e) {
