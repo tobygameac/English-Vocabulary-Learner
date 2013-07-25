@@ -28,6 +28,7 @@ namespace EnglishVocabularyLearner {
     private int nowQuestionNumber;
     private int lastQuestionNumber;
     private int nowWrongNumber; // Test type 2
+    private bool isTesting;
     private bool isTestFinished;
 
     // Record status of every question
@@ -67,6 +68,7 @@ namespace EnglishVocabularyLearner {
     private void EnglishVocabularyLeaner_Load(object sender, EventArgs e) {
       this.DoubleBuffered = true;
       Form.CheckForIllegalCrossThreadCalls = false;
+      isTesting = false;
     }
 
     private void readByCustomFile(object sender, EventArgs e) {
@@ -141,7 +143,7 @@ namespace EnglishVocabularyLearner {
 
     private /* async */ void addVocabularyToPool() {
       while (true) {
-        if (checkBoxAutoClose.Checked && isTestFinished) {
+        if (checkBoxAutoClose.Checked && isTesting && isTestFinished) {
           // Do not need vocabulary anymore
           return;
         }
@@ -155,7 +157,9 @@ namespace EnglishVocabularyLearner {
         int choosenNumber = numberChooser.getNextNumber(vocList.Count);
         vocabularyPool.Add(vocList[choosenNumber]);
         vocabularyPool[vocabularyPool.Count - 1].setInformationFromInternet();
-        testHandler(); // Update again
+        if (isTesting) {
+          testHandler(); // Update again
+        }
         Thread.Sleep(10);
         //await Task.Delay(300);
       }
@@ -191,6 +195,7 @@ namespace EnglishVocabularyLearner {
       getNextQuestion(); // First question
 
       this.ControlBox = false;
+      isTesting = true;
       isTestFinished = false;
       testHandler();
     }
@@ -206,7 +211,7 @@ namespace EnglishVocabularyLearner {
       this.groupBoxTest.Visible = false; // Hide other groups and show the main group
 
       this.ControlBox = true;
-      isTestFinished = true;
+      isTesting = false;
     }
 
     private void testHandler() {
@@ -339,7 +344,7 @@ namespace EnglishVocabularyLearner {
       bool alreadyInList = false;
 
       Vocabulary vocabulary = new Vocabulary(this.textBoxVocabulary.Text.ToLower());
-      
+
       for (int i = 0; i < vocList.Count && !alreadyInList; i++)
         if (vocList[i].text.ToLower() == vocabulary.text.ToLower()) {
           alreadyInList = true;

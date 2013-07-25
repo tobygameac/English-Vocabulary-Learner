@@ -10,9 +10,6 @@ namespace EnglishVocabularyLearner {
     public String text, translation; // Data from the list
     public String definition, example; // Data from Internet
 
-    private WebBrowser translationBrowser = new WebBrowser();
-    private WebBrowser definitionBrowser = new WebBrowser();
-    private WebBrowser exampleBrowser = new WebBrowser();
     private bool alreadyGetInformationFromInternet;
 
     public Vocabulary(String text) {
