@@ -10,6 +10,9 @@ namespace EnglishVocabularyLearner {
     public String text, translation; // Data from the list
     public String definition, example; // Data from Internet
 
+    private WebBrowser translationBrowser = new WebBrowser();
+    private WebBrowser definitionBrowser = new WebBrowser();
+    private WebBrowser exampleBrowser = new WebBrowser();
     private bool alreadyGetInformationFromInternet;
 
     public Vocabulary(String text) {
@@ -51,12 +54,12 @@ namespace EnglishVocabularyLearner {
         return;
       }
       alreadyGetInformationFromInternet = true;
-       setTranslationStringFromInternet();
-       setDefinitionStringFromInternet();
-       setExampleStringFromInternet();
+      setTranslationFromInternet();
+      setDefinitionFromInternet();
+      setExampleFromInternet();
     }
 
-    private void setTranslationStringFromInternet() {
+    private void setTranslationFromInternet() {
       /* WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("https://translate.google.com.tw/?hl=zh-TW&tab=wT#en/zh-TW/" + text);
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
@@ -66,7 +69,7 @@ namespace EnglishVocabularyLearner {
       }
 
       HtmlElement doc = webBrowser.Document.GetElementById("result_box");
-      webBrowser.Dispose();
+      
       translation += doc.InnerText;
       Console.WriteLine(doc.InnerText);
       if (doc.InnerText == "") {
@@ -74,7 +77,7 @@ namespace EnglishVocabularyLearner {
       } */
     }
 
-    private void setDefinitionStringFromInternet() {
+    private void setDefinitionFromInternet() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
       webBrowser.ScriptErrorsSuppressed = true; // Avoid script error
@@ -101,7 +104,7 @@ namespace EnglishVocabularyLearner {
       }
     }
 
-    private void setExampleStringFromInternet() {
+    private void setExampleFromInternet() {
       WebBrowser webBrowser = new WebBrowser();
       webBrowser.Navigate("http://sentence.yourdictionary.com/" + text);
       //webBrowser.Navigate("http://www.collinsdictionary.com/dictionary/english/" + vocList[choosenNumber].text);

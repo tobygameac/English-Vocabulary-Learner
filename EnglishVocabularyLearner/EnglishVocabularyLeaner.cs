@@ -100,12 +100,12 @@ namespace EnglishVocabularyLearner {
           }
         }
         if (strs.Count == 2 || strs.Count == 3) { // A voc need 3 attribute, attribute 1 is score
-          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
+          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]?[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
             vocList.Add(new Vocabulary(Int32.Parse(strs[0]), strs[1], strs.Count == 3 ? strs[2] : ""));
             successCount++;
           }
         } else if (strs.Count > 3) {
-          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]*[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
+          if ((Regex.IsMatch(strs[0], @"^[\-\+\s]?[0-9]+$") /* && Regex.IsMatch(strs[1], @"^[a-zA-Z]+$") */)) {
             String tempTranslations = "";
             for (int i = 2; i < tempStrs.Length; i++) {
               tempTranslations += tempStrs[i] + " ";
@@ -145,17 +145,18 @@ namespace EnglishVocabularyLearner {
           // Do not need vocabulary anymore
           return;
         }
-        if (vocList == null || vocList.Count == 0 || vocabularyPool.Count >= 5) {
+        if (vocList == null || vocList.Count == 0 || vocabularyPool.Count >= 10) {
           // Only need 10 in pool
           // Don't use while because need to return
           Thread.Sleep(300);
-          //await Task.Delay(1000);
+          //await Task.Delay(300);
           continue;
         }
         int choosenNumber = numberChooser.getNextNumber(vocList.Count);
         vocabularyPool.Add(vocList[choosenNumber]);
         vocabularyPool[vocabularyPool.Count - 1].setInformationFromInternet();
-        Thread.Sleep(50);
+        testHandler(); // Update again
+        Thread.Sleep(10);
         //await Task.Delay(300);
       }
     }
@@ -231,7 +232,7 @@ namespace EnglishVocabularyLearner {
         this.textBoxAnswer.Visible = false;
 
         this.richTextBoxQuestion.BackColor = answerStatus[nowQuestionNumber] ? Color.Green : Color.Red;
-        questionString += nowVocabulary.text + "\n" + answers[nowQuestionNumber];
+        questionString += nowVocabulary.text + "\n\n" + answers[nowQuestionNumber];
       } else {
         this.textBoxAnswer.Visible = true;
         questionString += nowVocabulary.text[0]; // Show the first alphabet
@@ -338,19 +339,20 @@ namespace EnglishVocabularyLearner {
       bool alreadyInList = false;
 
       Vocabulary vocabulary = new Vocabulary(this.textBoxVocabulary.Text.ToLower());
-      vocabulary.setInformationFromInternet();
-      this.vocabularyBrowser.setVocabulary(vocabulary);
-
+      
       for (int i = 0; i < vocList.Count && !alreadyInList; i++)
         if (vocList[i].text.ToLower() == vocabulary.text.ToLower()) {
           alreadyInList = true;
-          this.richTextBoxVocabularyInformation.Text = vocList[i].translation;
+          this.richTextBoxVocabularyInformation.Text = "此單字已在單字庫中\n\n" + vocList[i].translation;
           this.buttonVocabularyOperation.Text = "修改單字";
         }
       if (!alreadyInList) {
-        this.buttonVocabularyOperation.Text = "新增單字";
+        this.richTextBoxVocabularyInformation.Text = "此單字未在單字庫中\n\n";
+        this.buttonVocabularyOperation.Text = "加入單字";
         this.buttonVocabularyOperation.Visible = true;
       }
+      vocabulary.setInformationFromInternet();
+      this.vocabularyBrowser.setVocabulary(vocabulary);
     }
 
     private void getNextQuestion() {

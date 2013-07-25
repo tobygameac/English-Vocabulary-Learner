@@ -18,6 +18,11 @@ namespace EnglishVocabularyLearner {
 
     public void setVocabulary(Vocabulary vocabulary) {
       this.vocabulary = vocabulary;
+      //if (isTestFinished) {
+        //this.Text = vocabulary.text + "定義及範例";
+      //} else {
+        this.Text = "定義及範例";
+      //}
       this.richTextBoxDefinition.Text = vocabulary.definition;
       this.richTextBoxExample.Text = vocabulary.example;
     }

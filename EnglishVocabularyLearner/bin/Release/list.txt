@@ -1,42 +1,65 @@
-35         autonomy         [名詞] 自治;自治權;自治團體  
+121         disgrace         [動詞] 使丟臉; [名詞] 恥辱;丟臉的事(或人)  
+53         brochure         [名詞] 小冊子  
+53         columnist         [名詞] 專欄作家  
+53         constituent         [形容詞] 構成(全體)的;組成的;選舉的; [名詞] 成分;組成的要素;選民  
+44         prospect         [動詞] 勘探;找礦; [名詞] 預期;前途;盼望的事物  
+36         autonomy         [名詞] 自治;自治權;自治團體  
+35         acute         [形容詞] 尖銳的;敏銳的;劇烈的  
 35         buckle         [動詞] 扣住;垮掉;讓步; [名詞] 帶釦;搭鉤  
-35         disgrace         [動詞] 使丟臉; [名詞] 恥辱;丟臉的事(或人)  
+35         cavity         [名詞] 洞;(身體的)腔;(牙的)蛀洞  
+35         cramp         [動詞] 用夾鉗夾緊;限制;約束; [名詞] 抽筋;夾鉗;束縛  
 35         excessive         [形容詞] 過度的;極度的  
-29         gloom         [動詞] 變陰暗;感到沮喪; [名詞] 陰暗;暗處;沮喪的氣氛  
-29         prospect         [動詞] 勘探;找礦; [名詞] 預期;前途;盼望的事物  
+29         nasty         [形容詞] 齷齪的;卑鄙的;難處理的  
+23         abundance         [名詞] 豐富;充足  
 23         accessible         [形容詞] 可(或易)接近的;可(或易)得到的  
-23         acute         [形容詞] 尖銳的;敏銳的;劇烈的  
+23         accordingly         [副詞] 照著;相應地;因此  
+23         accounting         [名詞] 會計;會計學  
+23         accumulation         [名詞] 累積;積聚  
 23         apprentice         [動詞] 當學徒; [名詞] 學徒;生手  
 23         assessment         [名詞] 估價;評價  
+23         authorize         [動詞] 授權給;批准  
+23         barometer         [名詞] 晴雨表;顯示變化的事物  
 23         besiege         [動詞] 圍攻;圍困;煩擾  
 23         binoculars         [名詞] 雙筒望遠鏡  
-23         brochure         [名詞] 小冊子  
+23         boycott         [動詞] 聯合抵制; [名詞] 聯合抵制  
+23         brink         [名詞] 邊;邊緣  
+23         burial         [名詞] 埋葬;葬禮;墓地  
+23         calcium         [名詞] 鈣  
 23         catastrophe         [名詞] 大災難;慘敗  
-23         cavity         [名詞] 洞;(身體的)腔;(牙的)蛀洞  
+23         cater         [動詞] 承辦宴席;迎合  
+23         charcoal         [名詞] 木炭;炭筆;深灰色  
 23         coffin         [名詞] 棺材;靈柩  
 23         coherent         [形容詞] 一致的;條理清楚的;連貫的  
 23         conceit         [名詞] 自滿;自負  
-23         constituent         [形容詞] 構成(全體)的;組成的;選舉的; [名詞] 成分;組成的要素;選民  
 23         contractor         [名詞] 承包商;立契約者  
 23         corps         [名詞] 兵團;部隊;團  
-23         cramp         [動詞] 用夾鉗夾緊;限制;約束; [名詞] 抽筋;夾鉗;束縛  
+23         credibility         [名詞] 可信性;確實性  
 23         crucial         [形容詞] 決定性的;重要的  
 23         cruiser         [名詞] 巡洋艦;遊艇;警察巡邏車  
-23         crumb         [名詞] 麵包屑;碎屑;少許  
+23         crumble         [動詞] 粉碎;崩潰;(希望等)破滅; [名詞] 酥皮點心(水果派)  
+23         cumulative         [形容詞] 漸增的;蓄積的;累計的  
+23         customary         [形容詞] 習慣上的;按慣例的  
 23         daffodil         [名詞] 黃水仙花;淡黃色  
 23         defect         [動詞] 逃跑;脫離;背叛; [名詞] 缺點;缺陷;不足之處  
+23         denounce         [動詞] 譴責;告發  
 23         detain         [動詞] 留住;扣留  
+23         dictation         [名詞] 口述;聽寫  
 23         differentiate         [動詞] 構成差別;區分  
 23         discharge         [動詞] 卸貨;發射;排出;釋放;解雇; [名詞] 卸貨;發射;排出;釋放;解雇  
 23         dismantle         [動詞] 去掉覆蓋物;拆除  
 23         dismay         [動詞] 使驚慌;使沮喪; [名詞] 驚慌;沮喪  
+23         likewise         [副詞] 同樣地;也;又  
 23         massacre         [動詞] 屠殺;使慘敗; [名詞] 大屠殺;慘敗  
 23         nourish         [動詞] 養育;滋養  
+23         proficiency         [名詞] 精通;熟練  
 23         socialize         [動詞] 交際;社會主義化  
+23         terminate         [動詞] 使結束;使終止;解雇  
+19         auditorium         [名詞] 會堂;禮堂  
 19         bandit         [名詞] 強盜;土匪  
 19         carp         [名詞] 鯉魚  
+19         cello         [名詞] 大提琴  
 19         dressing         [名詞] 打扮;佈置,裝飾;(拌沙拉等用的)調料  
-19         nasty         [形容詞] 齷齪的;卑鄙的;難處理的  
+19         housing         [名詞] 房屋,住宅  
 19         poultry         [名詞] 家禽  
 15         abbreviate         [動詞] 縮寫  
 15         abbreviation         [名詞] 縮寫;省略  
@@ -46,7 +69,6 @@
 15         abound         [動詞] 大量存在;富足;充滿  
 15         absentminded         [形容詞] 心不在焉的;健忘的  
 15         abstraction         [名詞] 抽象  
-15         abundance         [名詞] 豐富;充足  
 15         abuse         [動詞] 濫用;虐待; [名詞] 濫用;虐待  
 15         accelerate         [動詞] 加快;增長  
 15         acceleration         [名詞] 加速;促進  
@@ -54,11 +76,7 @@
 15         accommodate         [動詞] 能容納;能提供...膳宿;給...方便  
 15         accommodation         [名詞] 適應;方便設施;住處  
 15         accordance         [名詞] 一致;和諧;符合  
-15         accordingly         [副詞] 照著;相應地;因此  
 15         accountable         [形容詞] 應負責任的;可說明的  
-15         accounting         [名詞] 會計;會計學  
-15         accumulate         [動詞] 累積;積聚  
-15         accumulation         [名詞] 累積;積聚  
 15         accusation         [名詞] 指控;指責  
 15         acquisition         [名詞] 收購;取得  
 15         adaptation         [名詞] 適應;改寫  
@@ -121,11 +139,9 @@
 15         attic         [名詞] 頂樓;閣樓  
 15         auction         [動詞] 拍賣; [名詞] 拍賣  
 15         authentic         [形容詞] 可信的;真實的  
-15         authorize         [動詞] 授權給;批准  
 15         autograph         [動詞] 親筆簽名於; [名詞] (尤指名人的)親筆簽名  
 15         aviation         [名詞] 航空;飛行  
 15         awesome         [形容詞] 令人敬畏的;非凡的  
-15         barometer         [名詞] 晴雨表;顯示變化的事物  
 15         beckon         [動詞] (招手或點頭)示意;召喚  
 15         betray         [動詞] 背叛;出賣  
 15         beverage         [名詞] 飲料  
@@ -139,20 +155,16 @@
 15         bondage         [名詞] 奴隸身分;奴役;束縛  
 15         boost         [動詞] 舉;抬;推動;促進; [名詞] 一舉;一抬;推動;促進  
 15         bout         [名詞] (拳擊等)比賽;較量;(疾病等)發作  
-15         boycott         [動詞] 聯合抵制; [名詞] 聯合抵制  
 15         breakdown         [名詞] 故障;損壞;崩潰;分析  
 15         breakthrough         [名詞] 突圍;突破;突破性進展  
 15         breakup         [名詞] 分裂;關係破裂;解體  
 15         brew         [動詞] 釀造;醞釀著; [名詞] 釀製飲料  
-15         brink         [名詞] 邊;邊緣  
 15         brisk         [形容詞] 輕快的;興旺的;寒冷而清新的  
 15         brute         [形容詞] 畜生的;畜生般的;殘忍的; [名詞] 畜生;殘暴的人  
 15         bulky         [形容詞] 體積大的;笨重的  
 15         bureaucracy         [名詞] 官僚政治;(總稱)官僚  
-15         burial         [名詞] 埋葬;葬禮;墓地  
 15         byte         [名詞] (電腦)位元組  
 15         caffeine         [名詞] 咖啡因  
-15         calcium         [名詞] 鈣  
 15         canvas         [動詞] 用帆布覆蓋;用帆布裝備; [名詞] 油畫布  
 15         capability         [名詞] 能力;性能  
 15         capsule         [名詞] 小盒;膠囊;太空艙  
@@ -164,7 +176,6 @@
 15         carol         [名詞] (耶誕)頌歌;讚美詩  
 15         cashier         [名詞] 出納員  
 15         casualty         [名詞] 傷亡人員  
-15         cater         [動詞] 承辦宴席;迎合  
 15         cavalry         [名詞] 騎兵;騎兵部隊  
 15         cemetery         [名詞] 公墓;墓地  
 15         certainty         [名詞] 確實;必然  
@@ -172,7 +183,6 @@
 15         champagne         [名詞] 香檳酒;香檳酒色  
 15         chaos         [名詞] 混亂;雜亂的一團  
 15         characterize         [動詞] 描繪...的特性;具有...的特徵  
-15         charcoal         [名詞] 木炭;炭筆;深灰色  
 15         chariot         [動詞] 駕馭(戰車或馬車); [名詞] (古代的)雙輪戰車  
 15         charitable         [形容詞] 慈善的;寬容的  
 15         cholesterol         [名詞] 膽固醇  
@@ -195,7 +205,6 @@
 15         collide         [動詞] 相撞;衝突;抵觸  
 15         collision         [名詞] 相撞;衝突;抵觸  
 15         colloquial         [形容詞] 口語的;會話的  
-15         columnist         [名詞] 專欄作家  
 15         commemorate         [動詞] 慶祝;紀念  
 15         commence         [動詞] 開始;著手;得學位  
 15         commentary         [名詞] 評論;註釋  
@@ -254,18 +263,14 @@
 15         counterpart         [名詞] 對應的人(或物)  
 15         coverage         [名詞] 覆蓋範圍;保險項目;新聞報導  
 15         covet         [動詞] 垂涎;貪圖  
-15         credibility         [名詞] 可信性;確實性  
 15         credible         [形容詞] 可信的;可靠的  
 15         criterion         [名詞] (判斷、批評的)標準;尺度  
 15         crook         [動詞] 使彎曲;成鉤形; [名詞] 彎曲的東西;騙子;偷兒  
 15         crooked         [形容詞] 彎曲的;欺詐的;不正派的  
 15         crude         [形容詞] 未經加工的;粗野的;粗糙的  
 15         cruise         [動詞] 巡航;航遊;緩慢巡行; [名詞] 巡航;航遊;巡邏  
-15         crumble         [動詞] 粉碎;崩潰;(希望等)破滅; [名詞] 酥皮點心(水果派)  
 15         crust         [動詞] 結成外殼;覆有硬皮; [名詞] 麵包皮;派餅皮;硬外皮  
 15         cultivate         [動詞] 栽培(作物等);養殖(魚等);培育  
-15         cumulative         [形容詞] 漸增的;蓄積的;累計的  
-15         customary         [形容詞] 習慣上的;按慣例的  
 15         dandruff         [名詞] 頭皮屑  
 15         daybreak         [名詞] 黎明;破曉  
 15         deadly         [形容詞] 致命的,致死的;非常的,極度的; [副詞] 死一般地;非常,極度地  
@@ -279,9 +284,7 @@
 15         degrade         [動詞] 貶低;降級;降低  
 15         deliberate         [形容詞] 深思熟慮的;蓄意的; [動詞] 仔細考慮;商議  
 15         delinquent         [形容詞] 怠忽職守的;拖欠的;犯法的; [名詞] 青少年罪犯;違法者  
-15         denounce         [動詞] 譴責;告發  
 15         density         [名詞] 密度  
-15         dental         [形容詞] 牙齒的;牙科的  
 15         depict         [動詞] 描畫;雕出;描述  
 15         deprive         [動詞] 剝奪  
 15         deputy         [名詞] 代表,代理人;副職,副手  
@@ -300,7 +303,6 @@
 15         diagnosis         [名詞] 診斷;診斷書;調查分析  
 15         diameter         [名詞] 直徑  
 15         dictate         [動詞] 口授,口述,  
-15         dictation         [名詞] 口述;聽寫  
 15         dictator         [名詞] 獨裁者  
 15         dilemma         [名詞] 困境;進退兩難  
 15         dimension         [名詞] (長;寬;厚;高等的)尺寸;大小  
@@ -569,7 +571,6 @@
 15         liable         [形容詞] 易...的;可能的;負有法律責任的  
 15         liberate         [動詞] 解放,使獲自由  
 15         liberation         [名詞] 解放;釋出  
-15         likewise         [副詞] 同樣地;也;又  
 15         limo         [名詞] limousine  
 15         limousine         [名詞] 大轎車  
 15         liner         [名詞] 班輪;眼線筆  
@@ -741,7 +742,6 @@
 15         presume         [動詞] 假定;認為;擅自(做)  
 15         preventive         [形容詞] 預防的;防病的; [名詞] 預防法;預防措施;預防物  
 15         productivity         [名詞] 生產力;生產率  
-15         proficiency         [名詞] 精通;熟練  
 15         profound         [形容詞] 深刻的;深度的  
 15         progressive         [形容詞] 逐漸的; [名詞] 革新主義者  
 15         prohibit         [動詞] 禁止  
@@ -974,7 +974,6 @@
 15         tedious         [形容詞] 冗長乏味的;使人厭煩的  
 15         temperament         [名詞] 氣質;性情  
 15         tempest         [名詞] 暴風雨;暴風雪;騷動  
-15         terminate         [動詞] 使結束;使終止;解雇  
 15         textile         [形容詞] 紡織的; [名詞] 紡織品;紡織原料  
 15         texture         [動詞] 使...行成紋理; [名詞] (織物的)結構;質地;紋理;肌理  
 15         theatrical         [形容詞] 劇場的;戲劇的;戲劇性的  
@@ -1097,10 +1096,17 @@
 15         yearn         [動詞] 思念;渴望;嚮往  
 14         competitive         [形容詞] 競爭的  
 14         convention         [名詞] 會議,大會  
+14         depression         [名詞] 沮喪,意氣消沈  
+14         gloom         [動詞] 變陰暗;感到沮喪; [名詞] 陰暗;暗處;沮喪的氣氛  
+14         impact         [動詞] 壓緊;擠滿; [名詞] 衝擊,撞擊;影響  
+14         intonation         [名詞] 語調;抑揚之聲  
 14         invade         [動詞] 侵入,侵略  
 14         laboratory         [名詞] 實驗室,研究室  
+14         memorial         [形容詞] 追悼的;記憶的; [名詞] 紀念碑  
+14         proverb         [名詞] 諺語,俗語  
 14         tap         [動詞] 輕拍,輕叩; [名詞] 龍頭;竊聽器  
 14         tremendous         [形容詞] 巨大的;極度的,驚人的  
+14         vegetarian         [名詞] 素食者  
 12         abide         [動詞] 忍受;等候  
 12         abolish         [動詞] 廢除;廢止  
 12         abortion         [名詞] 墮胎  
@@ -1152,13 +1158,11 @@
 12         assault         [動詞] 攻擊;抨擊;施暴; [名詞] 暴行;攻擊;抨擊;施暴  
 12         asset         [名詞] 財產,資產  
 12         astonish         [動詞] 使吃驚,使驚訝  
-12         astonishment         [名詞] 驚訝;驚愕  
 12         astray         [形容詞] 迷路的;離開正道的; [副詞] 迷路;離開正道  
 12         astronaut         [名詞] 太空人,宇航員  
 12         astronomer         [名詞] 天文學家  
 12         astronomy         [名詞] 天文學  
 12         attendance         [名詞] 出席;出席人數;侍候  
-12         auditorium         [名詞] 會堂;禮堂  
 12         auxiliary         [名詞] 輔助者;助動詞  
 12         awe         [動詞] 使敬畏;使畏怯; [名詞] 敬畏;畏怯  
 12         awhile         [副詞] 片刻  
@@ -1227,7 +1231,6 @@
 12         bruise         [動詞] 使受瘀傷;碰傷(水果);挫傷(感情); [名詞] 青腫;(水果等)碰傷;挫傷  
 12         bulge         [動詞] 膨脹;凸起;裝滿; [名詞] 腫脹;凸塊;增長  
 12         bulk         [名詞] 體積;容積;大塊;大多數  
-12         bully         [動詞] 脅迫;欺侮; [名詞] 恃強欺弱者;惡霸  
 12         bureau         [名詞] 事務處  
 12         butcher         [動詞] 屠宰(牲口); [名詞] 肉販  
 12         cactus         [名詞] 仙人掌  
@@ -1249,7 +1252,6 @@
 12         celebrity         [名詞] 名人;名流  
 12         celery         [名詞] 芹菜  
 12         cellar         [動詞] 把...藏入地窖(或酒窖); [名詞] 地下室;地窖;酒窖  
-12         cello         [名詞] 大提琴  
 12         cellphone         [名詞] 手機,大哥大  
 12         cell-phone         [名詞] 手機,大哥大  
 12         cellular         phone [名詞] 手機,大哥大  
@@ -1336,7 +1338,6 @@
 12         continuity         [名詞] 連續性;一貫性  
 12         convert         [動詞] 轉變;變換;改變信仰  
 12         convict         [動詞] 證明...有罪;判...有罪; [名詞] (服刑的)囚犯  
-12         copyright         [動詞] 為(書籍等)取得版權; [名詞] 版權;著作權  
 12         coral         [形容詞] 珊瑚的;珊瑚色的; [名詞] 珊瑚  
 12         corporation         [名詞] 股份(有限)公司  
 12         correspondence         [名詞] 一致;相對應;通信;(總稱)信件  
@@ -1557,7 +1558,6 @@
 12         hostage         [名詞] 人質;抵押品  
 12         hostile         [形容詞] 敵方的;懷敵意的  
 12         hound         [動詞] (用獵狗等)追獵;緊追; [名詞] 獵犬;卑劣的人  
-12         housing         [名詞] 房屋,住宅  
 12         hover         [動詞] 盤旋;徘徊; [名詞] 盤旋;徘徊  
 12         howl         [動詞] 嗥叫;怒吼;大哭;大笑; [名詞] 嗥叫;怒吼;大哭;大笑  
 12         hurl         [動詞] 猛力投擲;發射;厲聲叫罵; [名詞] 猛力投擲  
@@ -2181,6 +2181,8 @@
 12         zoom         [動詞] 發出嗡嗡聲;將畫面推近或拉遠; [名詞] 嗡嗡聲;變焦攝影  
 11         activist         [名詞] 激進主義份子;行動主義者  
 11         biochemistry         [名詞] 生物化學  
+11         crumb         [名詞] 麵包屑;碎屑;少許  
+10         construct         [動詞] 建造,構成  
 10         consumer         [名詞] 消費者;消耗者  
 9         A.M.         [縮寫] 上午  
 9         abandon         [動詞] 放棄  
@@ -2399,7 +2401,6 @@
 9         consonant         [名詞] 子音  
 9         constitute         [動詞] 構成,組成  
 9         constitution         [名詞] 憲法;章程,法規  
-9         construct         [動詞] 建造,構成  
 9         construction         [名詞] 建造,建設  
 9         constructive         [形容詞] 建設性的;積極的;有助益的  
 9         consult         [動詞] 與...商量  
@@ -2479,7 +2480,6 @@
 9         dependable         [形容詞] 可靠的;可信任的  
 9         dependent         [形容詞] 依靠的;依賴的; [名詞] 受撫養者  
 9         depress         [動詞] 使沮喪  
-9         depression         [名詞] 沮喪,意氣消沈  
 9         deserve         [動詞] 應受,該得  
 9         desperate         [形容詞] 極度渴望的  
 9         despite         [介系詞] 不管,儘管,任憑  
@@ -2753,7 +2753,6 @@
 9         immigrant         [名詞] 移民,僑民  
 9         immigrate         [動詞] 遷移;遷入  
 9         immigration         [名詞] 移居  
-9         impact         [動詞] 壓緊;擠滿; [名詞] 衝擊,撞擊;影響  
 9         imply         [動詞] 暗指;暗示;意味著  
 9         impression         [名詞] 印象  
 9         incident         [名詞] 事件;事變  
@@ -2798,7 +2797,6 @@
 9         interpret         [動詞] 解釋  
 9         interruption         [名詞] 中止;干擾  
 9         intimate         [形容詞] 親密的,熟悉的; [名詞] 至交,密友  
-9         intonation         [名詞] 語調;抑揚之聲  
 9         invasion         [名詞] 入侵,侵略  
 9         invention         [名詞] 發明,創造  
 9         invest         [動詞] 投(資)  
@@ -2864,7 +2862,6 @@
 9         mechanic         [名詞] 技工  
 9         mechanical         [形容詞] 機械的  
 9         memorable         [形容詞] 值得懷念的;難忘的  
-9         memorial         [形容詞] 追悼的;記憶的; [名詞] 紀念碑  
 9         mercy         [名詞] 慈悲,憐憫;仁慈  
 9         mere         [形容詞] 僅僅的,只不過的  
 9         merit         [名詞] 長處,優點;法律依據  
@@ -3032,7 +3029,6 @@
 9         prosperous         [形容詞] 興旺的,繁榮的,昌盛的  
 9         protein         [名詞] 蛋白質  
 9         protest         [動詞] 抗議,反對; [名詞] 抗議,異議  
-9         proverb         [名詞] 諺語,俗語  
 9         psychological         [形容詞] 心理的,精神的  
 9         psychologist         [名詞] 心理學家  
 9         psychology         [名詞] 心理學  
@@ -3097,7 +3093,6 @@
 9         restore         [動詞] 恢復  
 9         restriction         [名詞] 限制;約束;限定;限制規定  
 9         retain         [動詞] 保留,保持  
-9         retire         [動詞] 退休;退役  
 9         retirement         [名詞] 退休  
 9         retreat         [動詞] 撤退,退卻; [名詞] 撤退  
 9         reunion         [名詞] 團聚;重聚  
@@ -3241,7 +3236,6 @@
 9         usage         [名詞] 使用,用法  
 9         vain         [形容詞] 愛虛榮的;徒然的  
 9         vast         [形容詞] 廣闊的,浩瀚的;非常的  
-9         vegetarian         [名詞] 素食者  
 9         verb         [名詞] 動詞  
 9         very         [形容詞] 正是;恰好是;僅僅; [副詞] 很;非常  
 9         vessel         [名詞] 船,艦;器皿;血管  
@@ -3273,10 +3267,13 @@
 9         yogurt         [名詞] 優格  
 9         youthful         [形容詞] 年輕的;富青春活力的  
 7         accord         [動詞] (與...)一致;調解; [名詞] 一致;符合  
+7         accumulate         [動詞] 累積;積聚  
 7         addiction         [名詞] 沈溺;上癮  
 7         casual         [形容詞] 非正式的;隨便的  
 7         component         [形容詞] 組成的;構成的; [名詞] 構成要素;零件;成分  
 7         conception         [名詞] 概念;創始  
+7         dental         [形容詞] 牙齒的;牙科的  
+7         description         [名詞] 敘述;形容  
 7         diagram         [動詞] 用圖解法表示,圖示; [名詞] 圖表;(曲)線圖  
 7         miracle         [名詞] 奇蹟  
 7         plum         [名詞] 洋李; 梅子  
@@ -3468,7 +3465,6 @@
 6         cocktail         [名詞] 雞尾酒  
 6         coconut         [名詞] 椰子;椰子肉  
 6         collar         [名詞] 衣領  
-6         collection         [名詞] 收集  
 6         college         [名詞] 學院;大學  
 6         colony         [名詞] 殖民地  
 6         column         [名詞] (報紙的)欄,段;行  
@@ -3539,7 +3535,6 @@
 6         democracy         [名詞] 民主  
 6         democratic         [形容詞] 有民主精神的  
 6         deposit         [動詞] 放下,放置;寄存; [名詞] 存款  
-6         description         [名詞] 敘述;形容  
 6         designer         [名詞] 設計者;構思者;時裝設計師  
 6         desirable         [形容詞] 值得嚮往的;富有魅力的  
 6         destroy         [動詞] 毀壞,破壞  
@@ -4066,7 +4061,6 @@
 6         relax         [動詞] 使鬆弛,使鬆懈,放鬆  
 6         release         [動詞] 釋放,解放; [名詞] 發行,發表;釋放,解放  
 6         reliable         [形容詞] 可信賴的;可靠的;確實的  
-6         relief         [名詞] 緩和,減輕;解除  
 6         religion         [名詞] 宗教;宗教信仰  
 6         religious         [形容詞] 宗教的;虔誠的  
 6         rely         [動詞] 依靠,依賴  
@@ -4380,15 +4374,20 @@
 6         youngster         [名詞] 年輕人  
 6         zipper         [動詞] 拉上拉鍊; [名詞] 拉鍊  
 6         zone         [動詞] 劃出...為區; [名詞] 地區;時區;(地)層  
+5         astonishment         [名詞] 驚訝;驚愕  
+5         bully         [動詞] 脅迫;欺侮; [名詞] 恃強欺弱者;惡霸  
+5         copyright         [動詞] 為(書籍等)取得版權; [名詞] 版權;著作權  
 5         disagree         [動詞] 不一致,不符  
 5         geometry         [名詞] 幾何學  
 5         output         [動詞] 生產;使出;輸出; [名詞] 出產;生產;產量  
 5         ratio         [名詞] 比率;比例  
 5         tan         [形容詞] 鞣革的;棕褐色的; [動詞] 曬成棕褐色;鞣(皮); [名詞] 棕褐色;曬成的棕褐膚色;鞣料  
+4         clap         [動詞] 拍(手);鼓(掌); [名詞] 拍手喝采(聲);霹靂聲;輕拍  
 4         convince         [動詞] 使信服;說服  
 4         curve         [動詞] 使彎曲;使成曲線; [名詞] 曲線  
 4         differ         [動詞] 不同,相異  
 4         pickpocket         [名詞] 扒手  
+4         retire         [動詞] 退休;退役  
 4         tip         [動詞] 給小費;使傾斜; [名詞] 尖端;小費  
 3         ability         [名詞] 能力;專門技能  
 3         abroad         [副詞] 在國外  
@@ -4555,7 +4554,6 @@
 3         circle         [動詞] 畫圓圈;圈出;盤旋;流傳; [名詞] 圓圈;集團  
 3         citizen         [名詞] 市民;公民  
 3         claim         [動詞] 聲稱; [名詞] 主張,斷言  
-3         clap         [動詞] 拍(手);鼓(掌); [名詞] 拍手喝采(聲);霹靂聲;輕拍  
 3         classic         [形容詞] 典型的;古典的; [名詞] 古典著作  
 3         claw         [動詞] 用爪子抓; [名詞] (動物的)爪,腳爪;(蟹,蝦等的)鉗,螯  
 3         clay         [名詞] 黏土  
@@ -4969,8 +4967,8 @@
 3         mark         [動詞] 做記號; [名詞] 記號  
 3         marriage         [名詞] 結婚,婚姻  
 3         mask         [動詞] 在(臉上)戴面具;掩飾; [名詞] 面具  
-3         mass         rapid transit [片語] 大眾捷運系統  
 3         mass         [名詞] 團;塊  
+3         mass         rapid transit [片語] 大眾捷運系統  
 3         mat         [名詞] 蓆子;墊子  
 3         match         [動詞] 相配; [名詞] 比賽,競賽;對手;相配者;火柴  
 3         mate         [動詞] 使交配; [名詞] 同伴,伙伴  
@@ -5008,7 +5006,6 @@
 3         motorcycle         [名詞] 機車  
 3         movable         [形容詞] 可動的,可移動的  
 3         MRT         [縮寫] 大眾捷運系統  
-3         mule         [名詞] 騾;固執的人  
 3         multiply         [動詞] 乘,使相乘  
 3         museum         [名詞] 博物館  
 3         musician         [名詞] 音樂家  
@@ -5023,7 +5020,6 @@
 3         nearly         [副詞] 幾乎,差不多;密切地,親密地  
 3         neat         [形容詞] 整潔的;整齊的  
 3         necessary         [形容詞] 需要的  
-3         necklace         [名詞] 項鍊  
 3         needle         [動詞] (用話)刺激,挑逗;用針縫; [名詞] 針  
 3         negative         [形容詞] 否定的;負面的; [名詞] 否定語;負數;陰電;底片  
 3         neighbor         [動詞] 與...為鄰; [名詞] 鄰居  
@@ -5417,8 +5413,8 @@
 3         uniform         [形容詞] 相同的,一致的;不變的; [動詞] 使成一樣;使一律化; [名詞] 制服  
 3         upon         [介系詞] 在...之上  
 3         upper         [形容詞] 較高的  
-3         used         to [片語] 過去一向,過去時常  
 3         used         [形容詞] 習慣於; 舊的;用舊了的  
+3         used         to [片語] 過去一向,過去時常  
 3         user         [名詞] 使用者  
 3         usual         [形容詞] 例常的  
 3         vacation         [動詞] 度假; [名詞] 假期  
@@ -5474,8 +5470,12 @@
 3         yard         [名詞] 庭院;碼(3英呎)  
 3         youth         [名詞] 青少年;青少年時代  
 3         zebra         [名詞] 斑馬  
+2         collection         [名詞] 收集  
+2         relief         [名詞] 緩和,減輕;解除  
 2         trash         [動詞] 修剪(樹等)的枯枝殘葉;丟棄; [名詞] 垃圾  
 1         careful         [形容詞] 小心的  
+1         mule         [名詞] 騾;固執的人  
+1         necklace         [名詞] 項鍊  
 0         a         [冠詞] 一個;一種  
 0         able         [形容詞] 能;有能力的  
 0         about         [副詞] 在四周;在附近;大約; [介系詞] 大約;關於  
@@ -6560,7 +6560,6 @@
 0         while         [動詞] 消磨(時光),輕鬆地度過; [連接詞] 當...的時候; [名詞] 一會兒  
 0         white         [形容詞] 白色的; [名詞] 白色  
 0         who         [代名詞] 誰  
-0         who'd         [縮短形] who had; who would  
 0         whole         [形容詞] 完整的; [名詞] 全部,全體;整體  
 0         whom         [代名詞] 誰,什麼人  
 0         who's         [縮短形] who is; who has  
@@ -6611,3 +6610,4 @@
 0         yummy         [形容詞] 好吃的  
 0         zero         [動詞] 把...調整歸零; [名詞] 零  
 0         zoo         [名詞] 動物園  
+-1         who'd         [縮短形] who had; who would  

@@ -286,7 +286,7 @@
       this.richTextBoxVocabularyInformation.ReadOnly = true;
       this.richTextBoxVocabularyInformation.Size = new System.Drawing.Size(360, 260);
       this.richTextBoxVocabularyInformation.TabIndex = 12;
-      this.richTextBoxVocabularyInformation.Text = "";
+      this.richTextBoxVocabularyInformation.Text = "下方輸入單字後按下Enter查詢";
       // 
       // buttonVocabularyOperation
       // 
