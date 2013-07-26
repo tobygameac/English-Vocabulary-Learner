@@ -140,6 +140,7 @@ namespace EnglishVocabularyLearner {
           vocabularyFileString += vocList[i].score + " " + vocList[i].text + " " + vocList[i].translation + "\n";
         }
         System.IO.File.WriteAllText("list.txt", vocabularyFileString);
+        System.IO.File.WriteAllText("backup.txt", vocabularyFileString);
       });
       thread.Start();
     }
