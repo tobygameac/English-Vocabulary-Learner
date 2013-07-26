@@ -133,12 +133,15 @@ namespace EnglishVocabularyLearner {
     }
 
     private void writeNewVocabularyFile() {
-      vocList.Sort();
-      String vocabularyFileString = "";
-      for (int i = 0; i < vocList.Count; i++) {
-        vocabularyFileString += vocList[i].score + "         " + vocList[i].text + "         " + vocList[i].translation + "\n";
-      }
-      System.IO.File.WriteAllText("list.txt", vocabularyFileString);
+      Thread thread = new Thread(() => {
+        vocList.Sort();
+        String vocabularyFileString = "";
+        for (int i = 0; i < vocList.Count; i++) {
+          vocabularyFileString += vocList[i].score + " " + vocList[i].text + " " + vocList[i].translation + "\n";
+        }
+        System.IO.File.WriteAllText("list.txt", vocabularyFileString);
+      });
+      thread.Start();
     }
 
     private /* async */ void addVocabularyToPool() {
@@ -329,7 +332,9 @@ namespace EnglishVocabularyLearner {
         return;
       }
       this.textBoxAnswer.Text = "";
+
       getNextQuestion();
+ 
       lastQuestionNumber++;
       if (answerStatus[nowQuestionNumber]) { // If correct than skip to the next one
         nowQuestionNumber++;
@@ -342,6 +347,7 @@ namespace EnglishVocabularyLearner {
         return;
       }
       bool alreadyInList = false;
+      this.buttonVocabularyOperation.Visible = false;
 
       Vocabulary vocabulary = new Vocabulary(this.textBoxVocabulary.Text.ToLower());
 
@@ -352,11 +358,12 @@ namespace EnglishVocabularyLearner {
           this.buttonVocabularyOperation.Text = "修改單字";
         }
       if (!alreadyInList) {
-        this.richTextBoxVocabularyInformation.Text = "此單字未在單字庫中\n\n";
+        vocabulary.setInformationFromInternet();
+        this.richTextBoxVocabularyInformation.Text = "此單字未在單字庫中\n\n" + vocabulary.translation;
         this.buttonVocabularyOperation.Text = "加入單字";
-        this.buttonVocabularyOperation.Visible = true;
       }
-      vocabulary.setInformationFromInternet();
+      this.buttonVocabularyOperation.Visible = true;
+
       this.vocabularyBrowser.setVocabulary(vocabulary);
     }
 
