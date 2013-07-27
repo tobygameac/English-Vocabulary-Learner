@@ -125,8 +125,7 @@ namespace EnglishVocabularyLearner {
       this.buttonFileRead.Text = "加入單字庫";
       vocabularyPool = new List<Vocabulary>();
 
-      Thread thread = new Thread(addVocabularyToPool); // Improve the speed of getting new question
-      thread.SetApartmentState(ApartmentState.STA); // In order to use webBrowser in thread
+      Thread thread = new Thread(vocabularyPoolHandler); // Improve the speed of getting new question
       thread.IsBackground = true; // In order to kill thread when close
       thread.Start();
       //addVocabularyToPool();
@@ -145,7 +144,7 @@ namespace EnglishVocabularyLearner {
       thread.Start();
     }
 
-    private /* async */ void addVocabularyToPool() {
+    private void vocabularyPoolHandler() {
       while (true) {
         if (checkBoxAutoClose.Checked && isTesting && isTestFinished) {
           // Do not need vocabulary anymore
@@ -155,17 +154,16 @@ namespace EnglishVocabularyLearner {
           // Only need 10 in pool
           // Don't use while because need to return
           Thread.Sleep(300);
-          //await Task.Delay(300);
           continue;
         }
         int choosenNumber = numberChooser.getNextNumber(vocList.Count);
         vocabularyPool.Add(vocList[choosenNumber]);
-        vocabularyPool[vocabularyPool.Count - 1].setInformationFromInternet();
+        updateVocabularyInformation(vocabularyPool[vocabularyPool.Count - 1], false);
+        //vocabularyPool[vocabularyPool.Count - 1].setInformationFromInternet();
         if (isTesting) {
           testHandler(); // Update again
         }
         Thread.Sleep(10);
-        //await Task.Delay(300);
       }
     }
 
@@ -335,7 +333,7 @@ namespace EnglishVocabularyLearner {
       this.textBoxAnswer.Text = "";
 
       getNextQuestion();
- 
+
       lastQuestionNumber++;
       if (answerStatus[nowQuestionNumber]) { // If correct than skip to the next one
         nowQuestionNumber++;
@@ -351,6 +349,7 @@ namespace EnglishVocabularyLearner {
       this.buttonVocabularyOperation.Visible = false;
 
       Vocabulary vocabulary = new Vocabulary(this.textBoxVocabulary.Text.ToLower());
+      updateVocabularyInformation(vocabulary, true);
 
       for (int i = 0; i < vocList.Count && !alreadyInList; i++)
         if (vocList[i].text.ToLower() == vocabulary.text.ToLower()) {
@@ -359,13 +358,29 @@ namespace EnglishVocabularyLearner {
           this.buttonVocabularyOperation.Text = "修改單字";
         }
       if (!alreadyInList) {
-        vocabulary.setInformationFromInternet();
         this.richTextBoxVocabularyInformation.Text = "此單字未在單字庫中\n\n" + vocabulary.translation;
         this.buttonVocabularyOperation.Text = "加入單字";
       }
       this.buttonVocabularyOperation.Visible = true;
 
       this.vocabularyBrowser.setVocabulary(vocabulary);
+    }
+
+    private void updateVocabularyInformation(Vocabulary vocabulary, bool updateVocabularyBrowser) {
+      BackgroundWorker backgroundWorker = new BackgroundWorker();
+      backgroundWorker.DoWork += (sender, args) => {
+        vocabulary.setInformationFromInternet();
+      };
+      backgroundWorker.RunWorkerCompleted += (sender, args) => {
+        if (isTesting) {
+          if (vocabulary.text == questions[nowQuestionNumber].text) {
+            testHandler();
+          }
+        } else if (updateVocabularyBrowser) {
+          this.vocabularyBrowser.setVocabulary(vocabulary);
+        }
+      };
+      backgroundWorker.RunWorkerAsync();
     }
 
     private void getNextQuestion() {
@@ -387,5 +402,6 @@ namespace EnglishVocabularyLearner {
         this.buttonNextQuestion.Select();
       }
     }
+
   }
 }
