@@ -7,6 +7,7 @@ using System.Threading;
 using HtmlAgilityPack;
 
 namespace EnglishVocabularyLearner {
+
   public class Vocabulary : IComparable<Vocabulary> {
     public int score; // Using for rank
     public String text, translation; // Data from the list
@@ -36,9 +37,13 @@ namespace EnglishVocabularyLearner {
       this.score = 0;
       this.text = "";
       this.translation = "";
-      this.definition = "";
-      this.example = "";
+      this.definition = "載入中";
+      this.example = "載入中";
       alreadyGetInformationFromInternet = false;
+    }
+
+    public bool textEqualTo(Vocabulary other) {
+      return text.ToLower() == other.text.ToLower();
     }
 
     public int CompareTo(Vocabulary other) {
@@ -88,52 +93,61 @@ namespace EnglishVocabularyLearner {
     }
 
     private void setDefinitionFromInternet() {
-      HtmlDocument doc = new HtmlWeb().Load("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
-      doc.OptionFixNestedTags = true;
       definition = "";
-      HtmlNodeCollection root = doc.DocumentNode.SelectNodes("//div[@class='form']//ul//li");
-      if (root == null) {
-        definition = "未找到範例";
-        return;
-      }
-      foreach (HtmlNode rootNode in root) {
-         String sentence = "";
-         foreach (HtmlNode node in rootNode.ChildNodes) {
-           sentence += node.InnerText;
-         }
-         sentence = textFilter(sentence);
-         definition += sentence + "\n\n";
+      try {
+        HtmlDocument doc = new HtmlWeb().Load("http://wordnetweb.princeton.edu/perl/webwn?s=" + text + "&sub=Search+WordNet&o2=&o0=1&o8=1&o1=1&o7=&o5=&o9=&o6=&o3=&o4=&h=");
+        doc.OptionFixNestedTags = true;
+        HtmlNodeCollection root = doc.DocumentNode.SelectNodes("//div[@class='form']//ul//li");
+        if (root == null) {
+          definition = "未找到定義";
+          return;
+        }
+        foreach (HtmlNode rootNode in root) {
+          String sentence = "";
+          foreach (HtmlNode node in rootNode.ChildNodes) {
+            sentence += node.InnerText;
+          }
+          sentence = textFilter(sentence);
+          definition += sentence + "\n\n";
+        }
+      } catch (Exception exception) {
       }
       if (definition == "") {
-        definition = "未找到範例";
+        definition = "未找到定義";
       }
     }
 
     private void setExampleFromInternet() {
-      HtmlDocument doc = new HtmlWeb().Load("http://sentence.yourdictionary.com/" + text);
-      //new HtmlWeb().Load("http://www.collinsdictionary.com/dictionary/english/" + vocList[choosenNumber].text);
-      //new HtmlWeb().Load("http://www.ldoceonline.com/Leisure-topic/" + vocList[choosenNumber].text);
-      //new HtmlWeb().Load("http://dictionary.cambridge.org/dictionary/learner-english/" + vocList[choosenNumber].text + "?q=" + vocList[choosenNumber].text);
-      doc.OptionFixNestedTags = true;
       example = "";
-      HtmlNodeCollection root = doc.DocumentNode.SelectNodes("//ul[@class='example']/li");
-      if (root == null) {
-        example = "未找到範例";
-        return;
-      }
-      foreach (HtmlNode rootNode in root) {
-        String sentence = "";
-        foreach (HtmlNode node in rootNode.ChildNodes) {
-          sentence += node.InnerHtml;
+      try {
+        HtmlDocument doc = new HtmlWeb().Load("http://sentence.yourdictionary.com/" + text);
+        //new HtmlWeb().Load("http://www.collinsdictionary.com/dictionary/english/" + vocList[choosenNumber].text);
+        //new HtmlWeb().Load("http://www.ldoceonline.com/Leisure-topic/" + vocList[choosenNumber].text);
+        //new HtmlWeb().Load("http://dictionary.cambridge.org/dictionary/learner-english/" + vocList[choosenNumber].text + "?q=" + vocList[choosenNumber].text);
+        doc.OptionFixNestedTags = true;
+        HtmlNodeCollection root = doc.DocumentNode.SelectNodes("//ul[@class='examples']/li");
+        if (root == null) {
+          root = doc.DocumentNode.SelectNodes("//ul[@class='example']/li");
+          if (root == null) {
+            example = "未找到範例";
+            return;
+          }
         }
-        if (sentence == "") {
-          continue;
+        foreach (HtmlNode rootNode in root) {
+          String sentence = "";
+          foreach (HtmlNode node in rootNode.ChildNodes) {
+            sentence += node.InnerHtml;
+          }
+          if (sentence == "") {
+            continue;
+          }
+          sentence = textFilter(sentence);
+          sentence = sentence.Replace("<b>", "");
+          sentence = sentence.Replace("</b>", "");
+          sentence = sentence.Replace("\n", " ");
+          example += sentence + "\n\n";
         }
-        sentence = textFilter(sentence);
-        sentence = sentence.Replace("<b>", "");
-        sentence = sentence.Replace("</b>", "");
-        sentence = sentence.Replace("\n", "");
-        example += sentence + "\n\n";
+      } catch (Exception exception) {
       }
       if (example == "") {
         example = "未找到範例";
@@ -144,7 +158,11 @@ namespace EnglishVocabularyLearner {
       String newString = text[0].ToString();
       for (int i = 1; i < text.Length - 1; i++)
         newString += "_";
-      newString += text[text.Length - 1].ToString();
+      if (text.Length == 2) {
+        newString += "_";
+      } else if (text.Length > 2) {
+        newString += text[text.Length - 1].ToString();
+      }
       if (sentence != null && sentence != "" && sentence.IndexOf(text) != -1) {
         sentence = sentence.Replace(text, newString);
       }

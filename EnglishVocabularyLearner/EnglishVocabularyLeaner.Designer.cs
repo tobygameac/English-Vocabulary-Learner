@@ -49,9 +49,9 @@
       this.buttonPrevQuestion = new System.Windows.Forms.Button();
       this.buttonNextQuestion = new System.Windows.Forms.Button();
       this.groupBoxMainOperation = new System.Windows.Forms.GroupBox();
-      this.textBoxVocabulary = new System.Windows.Forms.TextBox();
-      this.richTextBoxVocabularyInformation = new System.Windows.Forms.RichTextBox();
       this.buttonVocabularyOperation = new System.Windows.Forms.Button();
+      this.richTextBoxVocabularyInformation = new System.Windows.Forms.RichTextBox();
+      this.textBoxVocabulary = new System.Windows.Forms.TextBox();
       this.vocabularyBrowser = new EnglishVocabularyLearner.VocabularyBrowser();
       this.groupBoxTestOperation.SuspendLayout();
       this.groupBoxFileRead.SuspendLayout();
@@ -148,7 +148,7 @@
       this.buttonStartTest1.Name = "buttonStartTest1";
       this.buttonStartTest1.Size = new System.Drawing.Size(75, 23);
       this.buttonStartTest1.TabIndex = 13;
-      this.buttonStartTest1.Text = "Go!";
+      this.buttonStartTest1.Text = "開始測驗一";
       this.buttonStartTest1.UseVisualStyleBackColor = true;
       // 
       // buttonStartTest2
@@ -157,7 +157,7 @@
       this.buttonStartTest2.Name = "buttonStartTest2";
       this.buttonStartTest2.Size = new System.Drawing.Size(75, 23);
       this.buttonStartTest2.TabIndex = 14;
-      this.buttonStartTest2.Text = "Go!";
+      this.buttonStartTest2.Text = "開始測驗二";
       this.buttonStartTest2.UseVisualStyleBackColor = true;
       // 
       // checkBoxAutoClose
@@ -221,7 +221,7 @@
       this.buttonFinishTest.Name = "buttonFinishTest";
       this.buttonFinishTest.Size = new System.Drawing.Size(79, 23);
       this.buttonFinishTest.TabIndex = 7;
-      this.buttonFinishTest.Text = "Finish";
+      this.buttonFinishTest.Text = "完成";
       this.buttonFinishTest.UseVisualStyleBackColor = true;
       // 
       // textBoxAnswer
@@ -247,7 +247,7 @@
       this.buttonPrevQuestion.Name = "buttonPrevQuestion";
       this.buttonPrevQuestion.Size = new System.Drawing.Size(75, 23);
       this.buttonPrevQuestion.TabIndex = 4;
-      this.buttonPrevQuestion.Text = "<- Prev";
+      this.buttonPrevQuestion.Text = "<- 前";
       this.buttonPrevQuestion.UseVisualStyleBackColor = true;
       // 
       // buttonNextQuestion
@@ -256,7 +256,7 @@
       this.buttonNextQuestion.Name = "buttonNextQuestion";
       this.buttonNextQuestion.Size = new System.Drawing.Size(75, 23);
       this.buttonNextQuestion.TabIndex = 3;
-      this.buttonNextQuestion.Text = "Next ->";
+      this.buttonNextQuestion.Text = "後 ->";
       this.buttonNextQuestion.UseVisualStyleBackColor = true;
       // 
       // groupBoxMainOperation
@@ -271,13 +271,15 @@
       this.groupBoxMainOperation.TabStop = false;
       this.groupBoxMainOperation.Visible = false;
       // 
-      // textBoxVocabulary
+      // buttonVocabularyOperation
       // 
-      this.textBoxVocabulary.Font = new System.Drawing.Font("PMingLiU", 14F);
-      this.textBoxVocabulary.Location = new System.Drawing.Point(12, 290);
-      this.textBoxVocabulary.Name = "textBoxVocabulary";
-      this.textBoxVocabulary.Size = new System.Drawing.Size(277, 30);
-      this.textBoxVocabulary.TabIndex = 11;
+      this.buttonVocabularyOperation.Location = new System.Drawing.Point(295, 293);
+      this.buttonVocabularyOperation.Name = "buttonVocabularyOperation";
+      this.buttonVocabularyOperation.Size = new System.Drawing.Size(77, 23);
+      this.buttonVocabularyOperation.TabIndex = 13;
+      this.buttonVocabularyOperation.Text = "增加/修改";
+      this.buttonVocabularyOperation.UseVisualStyleBackColor = true;
+      this.buttonVocabularyOperation.Visible = false;
       // 
       // richTextBoxVocabularyInformation
       // 
@@ -288,15 +290,13 @@
       this.richTextBoxVocabularyInformation.TabIndex = 12;
       this.richTextBoxVocabularyInformation.Text = "下方輸入單字後按下Enter查詢";
       // 
-      // buttonVocabularyOperation
+      // textBoxVocabulary
       // 
-      this.buttonVocabularyOperation.Location = new System.Drawing.Point(295, 293);
-      this.buttonVocabularyOperation.Name = "buttonVocabularyOperation";
-      this.buttonVocabularyOperation.Size = new System.Drawing.Size(77, 23);
-      this.buttonVocabularyOperation.TabIndex = 13;
-      this.buttonVocabularyOperation.Text = "增加/修改";
-      this.buttonVocabularyOperation.UseVisualStyleBackColor = true;
-      this.buttonVocabularyOperation.Visible = false;
+      this.textBoxVocabulary.Font = new System.Drawing.Font("PMingLiU", 14F);
+      this.textBoxVocabulary.Location = new System.Drawing.Point(12, 290);
+      this.textBoxVocabulary.Name = "textBoxVocabulary";
+      this.textBoxVocabulary.Size = new System.Drawing.Size(277, 30);
+      this.textBoxVocabulary.TabIndex = 11;
       // 
       // vocabularyBrowser
       // 
